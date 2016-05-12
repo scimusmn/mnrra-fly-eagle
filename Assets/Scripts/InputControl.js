@@ -33,6 +33,9 @@ private var posHipCenter: Vector3;
 public var hipsCenterTarget: Vector3 = Vector3(0.0, 0.5, 2.0);
 public var hipsAllowedOffsets: Vector3 = Vector3(0.5, 3.0, 0.6);
 
+// Mouse control variables
+private var mouseScrollWingAngle: float = 0.0;
+
 function Start () {
 
     birdFlight = targetObj.GetComponent(BirdFlight);
@@ -44,17 +47,18 @@ function Start () {
 
 function Update () {
 
-    if(Input.GetMouseButtonDown(0)) {
-        birdFlight.Flap();
-    }
-
-    if(kinectInput == false) {
+    if(kinectInput == false || Input.GetMouseButton(0)) {
 
         // Get normalized mouse position between -1f and 1f.
         var mouseRatioX : float = Utils.Map(Input.mousePosition.x, 0, Screen.width, -1, 1);
         var mouseRatioY : float = Utils.Map(Input.mousePosition.y, 0, Screen.height, -1, 1);
 
-        birdFlight.UpdateInputs( mouseRatioX, mouseRatioY, 0.0 );
+        birdFlight.UpdateInputs( mouseRatioX, 0.0, mouseRatioY );
+  
+        mouseScrollWingAngle += Input.GetAxis("Mouse ScrollWheel");
+        var mouseWingAngle : float = Utils.Map(mouseScrollWingAngle, -1.0, 1.0, 50, -50);
+
+        birdFlight.UpdateFlapState(mouseWingAngle, -mouseWingAngle);
 
     } else {
 

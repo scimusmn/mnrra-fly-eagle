@@ -12,7 +12,7 @@ private var rotationSmooth : float = 5.0;
 private var rb : Rigidbody;
 
 public var baseSpeed : float = 1.0;
-public var boostSpeed : float = 5.0;
+public var warpSpeed : float = 30.0;
 public var rotateSpeed : float = 1.5;
 public var pitchMax : float = 5.0;
 public var rollMax : float = 60.0;
@@ -44,8 +44,8 @@ function Start () {
 function Update () {
 
 	// Forward movement
-	if (Input.GetKey(KeyCode.Q)){
-      transform.Translate( 0, 0, boostSpeed);
+	if (Input.GetKey(KeyCode.W)){
+      transform.Translate( 0, 0, warpSpeed);
     } else {
     	transform.Translate( 0, 0, baseSpeed);
     }
@@ -73,8 +73,8 @@ function Update () {
 	if (flapBoost > 0.0 || dampFlapBoost > 0.001) {
 
         // Smooth speed increase
-	    dampFlapBoost = Mathf.Lerp(dampFlapBoost, flapBoost, 0.15);
-	    transform.Translate( 0, dampFlapBoost * 0.5, dampFlapBoost * 2);
+	    dampFlapBoost = Mathf.Lerp(dampFlapBoost, flapBoost, 0.075);
+	    transform.Translate( 0, dampFlapBoost * 0.25, dampFlapBoost * 2);
 
         // Update camera to fall back when boosting.
 	    followCam.boostFollowDistance = dampFlapBoost * 2;
@@ -94,16 +94,6 @@ function Update () {
 
 public function Flap() {
 
-	// Trigger flap animation
-	// and give vertical boost.
-	birdAni.Flap();
-
-	// Note - We listen to flap animation
-	// to trigger boost on down flap.
-
-}
-
-public function addFlapBoost() {
     flapBoost += 0.35f;
 
 }
@@ -138,7 +128,7 @@ public function UpdateFlapState(wingLeftAngle:float, wingRightAngle:float) {
     // trigger a "flap boost" and don't allow another
     // until upward movement completes.
     if (updateFlapDetection(avgAngle) == true) {
-        addFlapBoost();
+        Flap();
     }
 
 }
@@ -208,4 +198,5 @@ public function noInputUpdate() {
 
     this.UpdateInputs( lerpedInputs.x, lerpedInputs.y, lerpedInputs.z );
     this.UpdateFlapState( lerpedFlap, -lerpedFlap );
+
 }

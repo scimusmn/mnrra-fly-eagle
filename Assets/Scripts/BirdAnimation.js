@@ -68,5 +68,5 @@ function onFlapAnimationPlayed() {
 	anim.SetInteger(flapCountHash, count);
 
 	// Give vertical boost to bird
-	birdFlight.addFlapBoost();
+	//birdFlight.addFlapBoost();
 }
