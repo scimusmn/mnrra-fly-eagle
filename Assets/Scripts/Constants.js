@@ -2,6 +2,6 @@
 
 public class Constants {
 
-	public static var GO_EAGLE_NAME : String = 'Eagle';
+	public static var GO_EAGLE_NAME : String = 'EaglePF';
 
 }

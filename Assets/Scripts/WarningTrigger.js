@@ -3,8 +3,6 @@ import UnityEngine.UI;
 
 public var warningMsg : String = 'Adjust course to stay near river.';
 
-private var targetName : String = 'Eagle';
-
 @Header ("Rotate forward direction towards safe zone (blue arrow)")
 
 private var uiWarning : GameObject;
@@ -14,7 +12,7 @@ private var isShowing = false;
 
 function Awake () {
 
-	uiWarning = GameObject.Find('UI_Warning');
+	uiWarning = GameObject.Find('UI-Warning');
 	uiWarningText = uiWarning.GetComponentInChildren(Text);
 
 }
@@ -31,8 +29,9 @@ function Update () {
 
 function OnTriggerEnter(other:Collider) {
 
-	if (other.gameObject.name == targetName) {
-		print('birddd');showWarning(true);
+	if (other.gameObject.name == Constants.GO_EAGLE_NAME) {
+		print('birddd');
+		showWarning(true);
 
 	}
 
@@ -42,7 +41,7 @@ function OnTriggerStay(other:Collider) {
 
 	// If other is facing in opposite direction of
 	// trigger, assume they are leaving as instructed
-	if (other.gameObject.name == targetName) {
+	if (other.gameObject.name == Constants.GO_EAGLE_NAME) {
 
 		// Dot represents the difference between facing directions
 		// 1 = exact same direction, -1 = exact opposite direction
@@ -63,7 +62,7 @@ function OnTriggerStay(other:Collider) {
 
 function OnTriggerExit(other:Collider) {
 
-	if (other.gameObject.name == targetName) {
+	if (other.gameObject.name == Constants.GO_EAGLE_NAME) {
 
 		showWarning(false);
 

@@ -2,13 +2,15 @@
 
 import UnityEngine.SceneManagement;
 
-private var targetName : String = 'Eagle';
+private var sceneFader:SceneFader;
 
-private var useFade : boolean = true;
+function Awake() {
+	sceneFader = FindObjectOfType(SceneFader);
+}
 
 function OnTriggerEnter(other:Collider) {
 
-	if (other.gameObject.name == targetName) {
+	if (other.gameObject.name == Constants.GO_EAGLE_NAME) {
 
 		fullReset();
 
@@ -17,24 +19,6 @@ function OnTriggerEnter(other:Collider) {
 }
 
 function fullReset() {
-
-//	if (useFade == true) {
-//
-//		var fader:SceneFader = GameObject.Find('Fader').GetComponent(SceneFader);
-//		var fadeTime : float = fader.fadeTime;
-//
-//		// Start fade out.
-//		fader.fadeIn = false;
-//
-//		// Wait for fade-out to complete
-//		yield WaitForSeconds(fadeTime);
-//
-//	}
-//
-//	var currentScene = SceneManager.GetActiveScene();
-//	SceneManager.LoadScene(currentScene.name);
-
-	var sceneFader:SceneFader = Camera.main.GetComponent(SceneFader);
 
 	var currentSceneName = SceneManager.GetActiveScene().name;
 	sceneFader.EndScene(currentSceneName);
