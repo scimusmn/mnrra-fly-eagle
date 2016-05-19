@@ -54,7 +54,7 @@ function Update () {
         var mouseRatioY : float = Utils.Map(Input.mousePosition.y, 0, Screen.height, -1, 1);
 
         birdFlight.UpdateInputs( mouseRatioX, 0.0, mouseRatioY );
-  
+  	
         mouseScrollWingAngle += Input.GetAxis("Mouse ScrollWheel");
         var mouseWingAngle : float = Utils.Map(mouseScrollWingAngle, -1.0, 1.0, 50, -50);
 
@@ -83,6 +83,8 @@ function kinectUpdate() {
             birdFlight.noInputUpdate();
             return;
         }
+
+        manager.DetectGesture(userId, KinectGestures.Gestures.Tpose);
 
     } else {
 
@@ -155,3 +157,13 @@ function kinectUpdate() {
     }
 
 }
+
+public function GestureInProgress( userId:long, userIndex:int, gesture:KinectGestures.Gestures, 
+	                              progress:float, joint:KinectInterop.JointType, screenPos:Vector3)
+	{
+
+		Debug.Log("Gesture progress--------");
+		print (gesture);
+		print (progress);
+
+	}
