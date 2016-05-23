@@ -30,7 +30,7 @@ function Update () {
 function OnTriggerEnter(other:Collider) {
 
 	if (other.gameObject.name == Constants.GO_EAGLE_NAME) {
-		print('birddd');
+		
 		showWarning(true);
 
 	}
