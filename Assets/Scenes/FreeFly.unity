@@ -290,15 +290,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 407442, guid: 22dd648ab8d6a44e1ad637a5219baaed, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 900
+      value: 1284
       objectReference: {fileID: 0}
     - target: {fileID: 407442, guid: 22dd648ab8d6a44e1ad637a5219baaed, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 200
+      value: 109
       objectReference: {fileID: 0}
     - target: {fileID: 407442, guid: 22dd648ab8d6a44e1ad637a5219baaed, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 901
+      value: 1154
       objectReference: {fileID: 0}
     - target: {fileID: 407442, guid: 22dd648ab8d6a44e1ad637a5219baaed, type: 2}
       propertyPath: m_LocalRotation.x
@@ -306,7 +306,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 407442, guid: 22dd648ab8d6a44e1ad637a5219baaed, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.8827048
       objectReference: {fileID: 0}
     - target: {fileID: 407442, guid: 22dd648ab8d6a44e1ad637a5219baaed, type: 2}
       propertyPath: m_LocalRotation.z
@@ -314,7 +314,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 407442, guid: 22dd648ab8d6a44e1ad637a5219baaed, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.00000016292068
+      value: -0.46992794
       objectReference: {fileID: 0}
     - target: {fileID: 407442, guid: 22dd648ab8d6a44e1ad637a5219baaed, type: 2}
       propertyPath: m_RootOrder
@@ -886,7 +886,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11451072, guid: 4f46fa64040b068409ab6b82425375a0, type: 2}
       propertyPath: warningMsg
-      value: Too low. Pull up!
+      value: Increase altitude. Too low to see prey.
       objectReference: {fileID: 0}
     - target: {fileID: 421808, guid: 4f46fa64040b068409ab6b82425375a0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1055,7 +1055,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11451072, guid: 4f46fa64040b068409ab6b82425375a0, type: 2}
       propertyPath: warningMsg
-      value: Too far from river. Adjust course!
+      value: Warning - Stay near river.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f46fa64040b068409ab6b82425375a0, type: 2}
@@ -1117,7 +1117,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11451072, guid: 4f46fa64040b068409ab6b82425375a0, type: 2}
       propertyPath: warningMsg
-      value: Too far from river. Adjust course!
+      value: Warning - Stay near river.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f46fa64040b068409ab6b82425375a0, type: 2}
@@ -1173,6 +1173,10 @@ Prefab:
       propertyPath: m_Name
       value: BoundsTriggerTop
       objectReference: {fileID: 0}
+    - target: {fileID: 11451072, guid: 4f46fa64040b068409ab6b82425375a0, type: 2}
+      propertyPath: warningMsg
+      value: 'Reduce altitude. Too high to see prey. '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f46fa64040b068409ab6b82425375a0, type: 2}
   m_IsPrefabParent: 0
@@ -1225,6 +1229,48 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18f0199e7d3a15646a716536bb230890, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1671973784
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 457544, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.000000059604645
+      objectReference: {fileID: 0}
+    - target: {fileID: 457544, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 65.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 457544, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 457544, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457544, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457544, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457544, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 457544, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1719396896
 GameObject:
@@ -1369,13 +1415,13 @@ MonoBehaviour:
   canvas: {fileID: 302639567}
   Canvas_circleRadius: 5
   Canvas_border: 25
-  Canvas_indicatorSize: 30
+  Canvas_indicatorSize: 50
   indicators:
-  - onScreenSprite: {fileID: 0}
-    onScreenColor: {r: 1, g: 0.9782962, b: 0.21323532, a: 0.209}
-    onScreenRotates: 1
-    offScreenSprite: {fileID: 21300000, guid: c94b23e59bd617e43ae03cc154ec0cb0, type: 3}
-    offScreenColor: {r: 0.9594321, g: 1, b: 0.2647059, a: 1}
+  - onScreenSprite: {fileID: 21300000, guid: 34a2fb4ca5833c2449791d7de91908c1, type: 3}
+    onScreenColor: {r: 1, g: 1, b: 1, a: 0.159}
+    onScreenRotates: 0
+    offScreenSprite: {fileID: 21300000, guid: 34a2fb4ca5833c2449791d7de91908c1, type: 3}
+    offScreenColor: {r: 0.986207, g: 1, b: 0, a: 1}
     offScreenRotates: 1
     targetOffset: {x: 0, y: 0, z: 0}
     transition: 0
@@ -1392,7 +1438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2724c6887d1f3a4b980a5421b847cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 104672, guid: 4c8d6f6086763554189fa28f374383e4, type: 2}
+  targetObject: {fileID: 131114, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
   offScreenArrow: {fileID: 1884832145}
 --- !u!1 &1986999446 stripped
 GameObject:

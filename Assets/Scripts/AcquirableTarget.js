@@ -9,7 +9,7 @@ function Awake () {
 }
 
 function OnTriggerEnter(other:Collider) {
-
+	
 	if (other.gameObject.name == Constants.GO_EAGLE_NAME) {
 		
 		tg.RemoveTarget(this.gameObject);

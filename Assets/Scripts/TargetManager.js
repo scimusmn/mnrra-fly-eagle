@@ -18,6 +18,9 @@ function Start () {
 		Debug.LogError('TargetGenerator.js: Set offScreenArrow', offScreenArrow);
 	}
 
+	//Temp- Add first target
+	Invoke('AddTarget', 7);
+
 }
 
 function Update () {
@@ -31,7 +34,7 @@ public function AddTarget() {
 	var newObj:GameObject = GameObject.Instantiate(targetObject);
 
 	// random position
-	newObj.transform.localPosition = Vector3(Random.Range(-1000, 1000), Random.Range(100, 200), Random.Range(-1000, 1000));
+	newObj.transform.localPosition = Vector3(Random.Range(-1000, 1000), 65.0, Random.Range(-1000, 1000));
 
 	// add ArrowIndicator
 	var indicatorId = 0; // ID (index) of indicator to use from OffScreenIndicator's "Indicators" List.
@@ -46,6 +49,6 @@ public function RemoveTarget(objToRemove:GameObject) {
 	Destroy(objToRemove);
 
 	// Spawn fresh target after 8 seconds
-	Invoke('AddTarget', 8);
+	Invoke('AddTarget', 7);
 
 }
