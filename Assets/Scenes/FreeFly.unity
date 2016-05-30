@@ -94,31 +94,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 417840, guid: 4a475ca6e39a7704f8af8ed652693306, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 918
+      value: 1320
       objectReference: {fileID: 0}
     - target: {fileID: 417840, guid: 4a475ca6e39a7704f8af8ed652693306, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 207
+      value: 117.1
       objectReference: {fileID: 0}
     - target: {fileID: 417840, guid: 4a475ca6e39a7704f8af8ed652693306, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1155
+      value: 1178.1
       objectReference: {fileID: 0}
     - target: {fileID: 417840, guid: 4a475ca6e39a7704f8af8ed652693306, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.0023003686
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 417840, guid: 4a475ca6e39a7704f8af8ed652693306, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.9680775
+      value: 0.8827048
       objectReference: {fileID: 0}
     - target: {fileID: 417840, guid: 4a475ca6e39a7704f8af8ed652693306, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.026542615
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 417840, guid: 4a475ca6e39a7704f8af8ed652693306, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.24923109
+      value: -0.46992794
       objectReference: {fileID: 0}
     - target: {fileID: 417840, guid: 4a475ca6e39a7704f8af8ed652693306, type: 2}
       propertyPath: m_RootOrder
@@ -1230,48 +1230,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18f0199e7d3a15646a716536bb230890, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1671973784
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 457544, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.000000059604645
-      objectReference: {fileID: 0}
-    - target: {fileID: 457544, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 65.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 457544, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 457544, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 457544, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 457544, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 457544, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 457544, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1719396896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,11 +1375,11 @@ MonoBehaviour:
   Canvas_border: 25
   Canvas_indicatorSize: 50
   indicators:
-  - onScreenSprite: {fileID: 21300000, guid: 34a2fb4ca5833c2449791d7de91908c1, type: 3}
-    onScreenColor: {r: 1, g: 1, b: 1, a: 0.159}
+  - onScreenSprite: {fileID: 21300000, guid: 5f7bd07bc1344e944a3c06c59c1ff34d, type: 3}
+    onScreenColor: {r: 1, g: 1, b: 1, a: 1}
     onScreenRotates: 0
     offScreenSprite: {fileID: 21300000, guid: 34a2fb4ca5833c2449791d7de91908c1, type: 3}
-    offScreenColor: {r: 0.986207, g: 1, b: 0, a: 1}
+    offScreenColor: {r: 1, g: 1, b: 1, a: 1}
     offScreenRotates: 1
     targetOffset: {x: 0, y: 0, z: 0}
     transition: 0
@@ -1439,7 +1397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 131114, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
-  offScreenArrow: {fileID: 1884832145}
+  offScreenIndicator: {fileID: 1884832145}
 --- !u!1 &1986999446 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 171722, guid: 22dd648ab8d6a44e1ad637a5219baaed, type: 2}
@@ -1454,5 +1412,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4, y: 1, z: 2}
+  m_Center: {x: 0, y: 2.09, z: 0}

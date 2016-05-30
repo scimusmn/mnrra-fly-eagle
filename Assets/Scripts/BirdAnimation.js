@@ -49,24 +49,3 @@ function CameraTransitionToSoar() {
 	camScript.TransitionFollowDistance(5.25f, 4.0f);
 
 }
-
-public function Flap() {
-
-	var count : int = anim.GetInteger(flapCountHash) + 1;
-	if (count < 1) count = 1;
-	print('Flap. Flap count: ' + count);
-	anim.SetInteger(flapCountHash, count);
-
-}
-
-// This function is triggered from 
-// an animation event withing the 
-// Flap animation timeline.
-function onFlapAnimationPlayed() {
-	var count : int = anim.GetInteger(flapCountHash) - 1;
-	print('onFlapAnimationPlayed. Flaps remaining: ' + count);
-	anim.SetInteger(flapCountHash, count);
-
-	// Give vertical boost to bird
-	//birdFlight.addFlapBoost();
-}

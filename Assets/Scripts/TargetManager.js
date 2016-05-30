@@ -6,7 +6,7 @@ import Greyman;
 // Link OffscreenIndicator class with at least one indicator already created.
 
 public var targetObject:GameObject;
-public var offScreenArrow:OffScreenIndicator;
+public var offScreenIndicator:OffScreenIndicator;
 
 function Start () {
 
@@ -14,8 +14,8 @@ function Start () {
 		Debug.LogError('TargetGenerator.js: Set targetObject', targetObject);
 	}
 
-	if (!offScreenArrow) {
-		Debug.LogError('TargetGenerator.js: Set offScreenArrow', offScreenArrow);
+	if (!offScreenIndicator) {
+		Debug.LogError('TargetGenerator.js: Set offScreenIndicator', offScreenIndicator);
 	}
 
 	//Temp- Add first target
@@ -27,6 +27,11 @@ function Update () {
 	if (Input.GetKeyUp(KeyCode.Q)){
 		AddTarget();
 	}
+
+	if (offScreenIndicator) {
+		print(offScreenIndicator.indicators.length);
+	}
+
 }
 
 public function AddTarget() {
@@ -38,14 +43,14 @@ public function AddTarget() {
 
 	// add ArrowIndicator
 	var indicatorId = 0; // ID (index) of indicator to use from OffScreenIndicator's "Indicators" List.
-	offScreenArrow.AddIndicator(newObj.transform, indicatorId);
+	offScreenIndicator.AddIndicator(newObj.transform, indicatorId);
 
 }
 
 public function RemoveTarget(objToRemove:GameObject) {
 
 	print('RemoveTarget: ' + objToRemove.name);
-	offScreenArrow.RemoveIndicator(objToRemove.transform);
+	offScreenIndicator.RemoveIndicator(objToRemove.transform);
 	Destroy(objToRemove);
 
 	// Spawn fresh target after 8 seconds
