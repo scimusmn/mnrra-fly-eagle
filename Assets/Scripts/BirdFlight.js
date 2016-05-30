@@ -67,25 +67,25 @@ function Update () {
     //transform.localEulerAngles.y = y * yawMax;
 
     // Update camera height based on Pitch.
-	followCam.boostFollowHeight = Mathf.Clamp(-Utils.Map(wingSpanPitch, -1, 1, -2.5, 2.5), -2.0, 2.0);
+	followCam.boostFollowHeight = Mathf.Clamp(-Utils.Map(wingSpanPitch, -1, 1, -1.5, 1.5), -1.0, 1.0);
 
 	// If flap boosting, apply here.
 	if (flapBoost > 0.0 || dampFlapBoost > 0.001) {
 
         // Smooth speed increase
 	    dampFlapBoost = Mathf.Lerp(dampFlapBoost, flapBoost, 0.075);
-	    transform.Translate( 0, dampFlapBoost * 0.25, dampFlapBoost * 2);
+	    transform.Translate( 0, dampFlapBoost * 0.1, dampFlapBoost * 1.2);
 
         // Update camera to fall back when boosting.
-	    followCam.boostFollowDistance = dampFlapBoost * 2;
+	    followCam.boostFollowDistance = dampFlapBoost * 6;
 
         // Reduce the boost effect over time.
-	    flapBoost -= 0.003;
+	    flapBoost -= 0.0015;
 	    if (flapBoost < 0.0) {
 	        flapBoost = 0.0;
-	    } else if (flapBoost > 2.5) {
+	    } else if (flapBoost > 1.0) {
 	        //ceiling
-	        flapBoost = 2.5;
+	        flapBoost = 1.0;
 	    }
 
 	}
@@ -94,7 +94,7 @@ function Update () {
 
 public function Flap() {
 
-    flapBoost += 0.35f;
+    flapBoost += 0.11f;
 
 }
 

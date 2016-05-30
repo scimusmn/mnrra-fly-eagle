@@ -39,7 +39,7 @@ public function AddTarget() {
 	var newObj:GameObject = GameObject.Instantiate(targetObject);
 
 	// random position
-	newObj.transform.localPosition = Vector3(Random.Range(-1000, 1000), 65.0, Random.Range(-1000, 1000));
+	newObj.transform.localPosition = Vector3(Random.Range(-1000, 1000), 16.5, Random.Range(-1000, 1000));
 
 	// add ArrowIndicator
 	var indicatorId = 0; // ID (index) of indicator to use from OffScreenIndicator's "Indicators" List.

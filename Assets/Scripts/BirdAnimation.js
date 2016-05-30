@@ -46,6 +46,6 @@ function CameraTransitionToSoar() {
 	
 	camScript.doLookAt = true;
 	camScript.doFollow = true;
-	camScript.TransitionFollowDistance(5.25f, 4.0f);
+	camScript.TransitionFollowDistance(2.55f, 4.0f);
 
 }
