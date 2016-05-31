@@ -96,12 +96,12 @@ function Update () {
 	    }
 
 	    // Reduce the boost altitude over time. (decays faster)
-	    altitudeBoost -= 0.025;
+	    altitudeBoost -= 0.02;
 	    if (altitudeBoost < 0.0) {
 	        altitudeBoost = 0.0;
-	    } else if (altitudeBoost > 1.0) {
+	    } else if (altitudeBoost > 1.5) {
 	        // Ceiling
-	        altitudeBoost = 1.0;
+	        altitudeBoost = 1.5;
 	    }
 
 	}
@@ -116,7 +116,8 @@ public function Flap() {
 		altitudeBoost += 0.15f;
 	} else {
 		speedBoost += 0.08f;
-		altitudeBoost += 0.3f;
+		altitudeBoost += 0.2f;
+		altitudeBoost *= 2.0f; // Altitude momentum
 	}
 
 }
