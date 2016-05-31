@@ -115,9 +115,9 @@ public function Flap() {
 		speedBoost += 0.2f;
 		altitudeBoost += 0.15f;
 	} else {
-		speedBoost += 0.08f;
+		speedBoost += 0.06f;
 		altitudeBoost += 0.2f;
-		altitudeBoost *= 2.0f; // Altitude momentum
+		altitudeBoost *= 1.2f; // Altitude momentum
 	}
 
 }
