@@ -970,7 +970,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11451072, guid: 4f46fa64040b068409ab6b82425375a0, type: 2}
       propertyPath: warningMsg
-      value: Increase altitude. Too low to see prey.
+      value: Increase altitude.
       objectReference: {fileID: 0}
     - target: {fileID: 421808, guid: 4f46fa64040b068409ab6b82425375a0, type: 2}
       propertyPath: m_LocalPosition.y

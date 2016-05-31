@@ -18,8 +18,10 @@ public var pitchMax : float = 5.0;
 public var rollMax : float = 60.0;
 public var yawMax : float = 60.0;
 
-private var flapBoost : float = 0.0;
-private var dampFlapBoost : float = 0.0;
+private var speedBoost : float = 0.0;
+private var dampSpeedBoost : float = 0.0;
+private var altitudeBoost : float = 0.0;
+private var dampAltitudeBoost : float = 0.0;
 
 private var birdAni : BirdAnimation;
 private var followCam : CameraFollow;
@@ -70,22 +72,36 @@ function Update () {
 	followCam.boostFollowHeight = Mathf.Clamp(-Utils.Map(wingSpanPitch, -1, 1, -1.5, 1.5), -1.0, 1.0);
 
 	// If flap boosting, apply here.
-	if (flapBoost > 0.0 || dampFlapBoost > 0.001) {
+	if (speedBoost > 0.0 || dampSpeedBoost > 0.001) {
 
         // Smooth speed increase
-	    dampFlapBoost = Mathf.Lerp(dampFlapBoost, flapBoost, 0.075);
-	    transform.Translate( 0, dampFlapBoost * 0.1, dampFlapBoost * 1.2);
+	    dampSpeedBoost = Mathf.Lerp(dampSpeedBoost, speedBoost, 0.075);
+
+	    // Smooth altitude increase (decays faster)
+	    dampAltitudeBoost = Mathf.Lerp(dampAltitudeBoost, altitudeBoost, 0.6);
+
+	    // Apply to transform
+	    transform.Translate( 0, dampAltitudeBoost, dampSpeedBoost);
 
         // Update camera to fall back when boosting.
-	    followCam.boostFollowDistance = dampFlapBoost * 6;
+	    followCam.boostFollowDistance = dampSpeedBoost * 6;
 
-        // Reduce the boost effect over time.
-	    flapBoost -= 0.0015;
-	    if (flapBoost < 0.0) {
-	        flapBoost = 0.0;
-	    } else if (flapBoost > 1.0) {
-	        //ceiling
-	        flapBoost = 1.0;
+        // Reduce the boost speed over time.
+	    speedBoost -= 0.0015;
+	    if (speedBoost < 0.0) {
+	        speedBoost = 0.0;
+	    } else if (speedBoost > 1.0) {
+	        // Ceiling
+	        speedBoost = 1.0;
+	    }
+
+	    // Reduce the boost altitude over time. (decays faster)
+	    altitudeBoost -= 0.025;
+	    if (altitudeBoost < 0.0) {
+	        altitudeBoost = 0.0;
+	    } else if (altitudeBoost > 1.0) {
+	        // Ceiling
+	        altitudeBoost = 1.0;
 	    }
 
 	}
@@ -94,7 +110,14 @@ function Update () {
 
 public function Flap() {
 
-    flapBoost += 0.11f;
+	// Make first flap most powerful
+	if (speedBoost == 0.0) {
+		speedBoost += 0.2f;
+		altitudeBoost += 0.15f;
+	} else {
+		speedBoost += 0.08f;
+		altitudeBoost += 0.3f;
+	}
 
 }
 
