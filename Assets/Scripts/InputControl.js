@@ -26,13 +26,6 @@ private var posShoulderRight: Vector3;
 private var posHead: Vector3;
 private var posHipCenter: Vector3;
 
-// Represents the ideal location we would expect an
-// active user's hips to be in, standing in center
-// of "stand here" zone. Should be updated anytime kinect
-// or "stand here" zone changes in physical space.
-public var hipsCenterTarget: Vector3 = Vector3(0.0, 0.5, 2.0);
-public var hipsAllowedOffsets: Vector3 = Vector3(0.5, 3.0, 0.6);
-
 // Mouse control variables
 private var mouseScrollWingAngle: float = 0.0;
 
@@ -110,15 +103,6 @@ function kinectUpdate() {
         // (Check by ensuring wrists/shoulders are on expected sides)
         if (posWristRight.x - posWristLeft.x < 0.2 || 
             posShoulderRight.x - posShoulderLeft.x < 0.1) {
-            birdFlight.noInputUpdate();
-            return;
-        }
-
-        // Is user standing near center of camera view?
-        // Hips should be roughly in center of "stand here" zone.
-        if (Mathf.Abs(posHipCenter.x - hipsCenterTarget.x) > hipsAllowedOffsets.x ||
-            Mathf.Abs(posHipCenter.y - hipsCenterTarget.y) > hipsAllowedOffsets.y ||
-            Mathf.Abs(posHipCenter.z - hipsCenterTarget.z) > hipsAllowedOffsets.z) {
             birdFlight.noInputUpdate();
             return;
         }
