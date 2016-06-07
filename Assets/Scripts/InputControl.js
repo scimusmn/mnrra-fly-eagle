@@ -26,6 +26,8 @@ private var posShoulderRight: Vector3;
 private var posHead: Vector3;
 private var posHipCenter: Vector3;
 
+private enum Gesture{TPose, Pencil};
+
 // Mouse control variables
 private var mouseScrollWingAngle: float = 0.0;
 
@@ -127,12 +129,17 @@ function kinectUpdate() {
         // Normalize degrees to -1 ~ 1 range.
         var normRoll :float = Utils.Map(rollAngle, -60, 60, 1.0, -1.0);
         var normYaw :float = Utils.Map(yawAngle, -70, 70, -1.0, 1.0);
-        print(pitchAngle);
         var normPitch :float = Utils.Map(pitchAngle, 48, 100, 1.0, -1.0);
 
         // Send update to bird controller
         birdFlight.UpdateInputs( normRoll, normYaw, normPitch );
         birdFlight.UpdateFlapState(wingLeftAngle, wingRightAngle);
+
+        // Detect "TPose"
+        if (wingRightAngle > -15 && wingRightAngle < 15 &&
+        	wingLeftAngle > -15 && wingLeftAngle < 15 ) {
+        	GestureUpdate(Gesture.TPose);
+        }
 
     } else {
 
@@ -143,12 +150,8 @@ function kinectUpdate() {
 
 }
 
-public function GestureInProgress( userId:long, userIndex:int, gesture:KinectGestures.Gestures, 
-	                              progress:float, joint:KinectInterop.JointType, screenPos:Vector3)
-	{
-
-		Debug.Log("Gesture progress--------");
-		print (gesture);
-		print (progress);
-
+function GestureUpdate(gesture:Gesture) {
+	if (gesture == Gesture.TPose) {
+		print("Performing TPose");
 	}
+}

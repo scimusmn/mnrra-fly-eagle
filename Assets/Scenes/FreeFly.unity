@@ -571,6 +571,32 @@ Canvas:
 Transform:
   m_PrefabParentObject: {fileID: 462118, guid: 4f46fa64040b068409ab6b82425375a0, type: 2}
   m_PrefabInternal: {fileID: 1251589157}
+--- !u!1 &451403034 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 151436, guid: 18f0199e7d3a15646a716536bb230890, type: 2}
+  m_PrefabInternal: {fileID: 1518309874}
+--- !u!114 &451403037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 451403034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97bb88aa18706c74b9f5e182c08c1d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &451403038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 451403034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b976a1901bb5d478901026c07729cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &460181762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,6 +1309,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11408946, guid: 18f0199e7d3a15646a716536bb230890, type: 2}
+      propertyPath: gestureListeners.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11408946, guid: 18f0199e7d3a15646a716536bb230890, type: 2}
+      propertyPath: playerCommonGestures.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 478080, guid: 18f0199e7d3a15646a716536bb230890, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1314,6 +1348,22 @@ Prefab:
     - target: {fileID: 478080, guid: 18f0199e7d3a15646a716536bb230890, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11408946, guid: 18f0199e7d3a15646a716536bb230890, type: 2}
+      propertyPath: playerCommonGestures.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11408946, guid: 18f0199e7d3a15646a716536bb230890, type: 2}
+      propertyPath: gestureManager
+      value: 
+      objectReference: {fileID: 451403038}
+    - target: {fileID: 11408946, guid: 18f0199e7d3a15646a716536bb230890, type: 2}
+      propertyPath: playerCalibrationPose
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11408946, guid: 18f0199e7d3a15646a716536bb230890, type: 2}
+      propertyPath: gestureListeners.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18f0199e7d3a15646a716536bb230890, type: 2}

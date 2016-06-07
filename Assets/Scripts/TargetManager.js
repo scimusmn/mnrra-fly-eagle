@@ -29,7 +29,7 @@ function Update () {
 	}
 
 	if (offScreenIndicator) {
-		print(offScreenIndicator.indicators.length);
+		//print(offScreenIndicator.indicators.length);
 	}
 
 }
