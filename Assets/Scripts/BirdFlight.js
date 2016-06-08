@@ -87,7 +87,7 @@ function Update () {
 	    followCam.boostFollowDistance = dampSpeedBoost * 4.5;
 
         // Reduce the boost speed over time.
-	    speedBoost -= 0.0015;
+	    speedBoost -= 0.001;
 	    if (speedBoost < 0.0) {
 	        speedBoost = 0.0;
 	    } else if (speedBoost > 1.0) {
@@ -96,7 +96,7 @@ function Update () {
 	    }
 
 	    // Reduce the boost altitude over time. (decays faster)
-	    altitudeBoost -= 0.015;
+	    altitudeBoost -= 0.025;
 	    if (altitudeBoost < 0.0) {
 	        altitudeBoost = 0.0;
 	    } else if (altitudeBoost > 1.5) {
@@ -112,12 +112,12 @@ public function Flap() {
 
 	// Make first flap most powerful
 	if (speedBoost == 0.0) {
-		speedBoost += 0.15f;
+		speedBoost += 0.35f;
 		altitudeBoost += 0.1f;
 	} else {
-		speedBoost += 0.09f;
-		altitudeBoost += 0.25f;
-		altitudeBoost *= 1.3f; // Altitude momentum
+		speedBoost += 0.15f;
+		altitudeBoost += 0.3f;
+		altitudeBoost *= 1.25f; // Altitude momentum
 	}
 
 }
