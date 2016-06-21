@@ -1,0 +1,1123 @@
+fileFormatVersion: 2
+guid: 3e08c1830d661475a8eb6ab63760b50e
+timeCreated: 1466543371
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: group_0
+    100002: group_1
+    100004: group_10
+    100006: group_11
+    100008: group_12
+    100010: group_13
+    100012: group_14
+    100014: group_14 1
+    100016: group_15
+    100018: group_15 1
+    100020: group_16
+    100022: group_17
+    100024: group_18
+    100026: group_19
+    100028: group_2
+    100030: group_20
+    100032: group_21
+    100034: group_22
+    100036: group_23
+    100038: group_24
+    100040: group_25
+    100042: group_26
+    100044: group_27
+    100046: group_3
+    100048: group_4
+    100050: group_5
+    100052: group_6
+    100054: group_7
+    100056: group_8
+    100058: group_9
+    100060: ID13
+    100062: ID144
+    100064: ID144 1
+    100066: ID144 2
+    100068: ID144 3
+    100070: ID144 4
+    100072: ID231
+    100074: ID231 1
+    100076: ID249
+    100078: ID249 1
+    100080: ID48
+    100082: ID48 1
+    100084: ID48 10
+    100086: ID48 11
+    100088: ID48 12
+    100090: ID48 13
+    100092: ID48 14
+    100094: ID48 15
+    100096: ID48 16
+    100098: ID48 17
+    100100: ID48 18
+    100102: ID48 19
+    100104: ID48 2
+    100106: ID48 20
+    100108: ID48 21
+    100110: ID48 22
+    100112: ID48 23
+    100114: ID48 24
+    100116: ID48 25
+    100118: ID48 26
+    100120: ID48 27
+    100122: ID48 28
+    100124: ID48 29
+    100126: ID48 3
+    100128: ID48 30
+    100130: ID48 31
+    100132: ID48 32
+    100134: ID48 33
+    100136: ID48 34
+    100138: ID48 35
+    100140: ID48 36
+    100142: ID48 37
+    100144: ID48 4
+    100146: ID48 5
+    100148: ID48 6
+    100150: ID48 7
+    100152: ID48 8
+    100154: ID48 9
+    100156: ID66
+    100158: ID66 1
+    100160: ID66 2
+    100162: ID92
+    100164: ID92 1
+    100166: instance_0
+    100168: instance_0 1
+    100170: instance_0 10
+    100172: instance_0 11
+    100174: instance_0 12
+    100176: instance_0 13
+    100178: instance_0 14
+    100180: instance_0 2
+    100182: instance_0 3
+    100184: instance_0 4
+    100186: instance_0 5
+    100188: instance_0 6
+    100190: instance_0 7
+    100192: instance_0 8
+    100194: instance_0 9
+    100196: instance_1
+    100198: instance_1 1
+    100200: instance_1 10
+    100202: instance_1 11
+    100204: instance_1 12
+    100206: instance_1 13
+    100208: instance_1 14
+    100210: instance_1 2
+    100212: instance_1 3
+    100214: instance_1 4
+    100216: instance_1 5
+    100218: instance_1 6
+    100220: instance_1 7
+    100222: instance_1 8
+    100224: instance_1 9
+    100226: instance_10
+    100228: instance_11
+    100230: instance_12
+    100232: instance_13
+    100234: instance_14
+    100236: instance_15
+    100238: instance_16
+    100240: instance_17
+    100242: instance_18
+    100244: instance_19
+    100246: instance_2
+    100248: instance_2 1
+    100250: instance_2 10
+    100252: instance_2 11
+    100254: instance_2 12
+    100256: instance_2 13
+    100258: instance_2 14
+    100260: instance_2 2
+    100262: instance_2 3
+    100264: instance_2 4
+    100266: instance_2 5
+    100268: instance_2 6
+    100270: instance_2 7
+    100272: instance_2 8
+    100274: instance_2 9
+    100276: instance_20
+    100278: instance_21
+    100280: instance_21 1
+    100282: instance_22
+    100284: instance_22 1
+    100286: instance_23
+    100288: instance_23 1
+    100290: instance_24
+    100292: instance_24 1
+    100294: instance_25
+    100296: instance_25 1
+    100298: instance_26
+    100300: instance_27
+    100302: instance_28
+    100304: instance_29
+    100306: instance_3
+    100308: instance_3 1
+    100310: instance_3 10
+    100312: instance_3 11
+    100314: instance_3 12
+    100316: instance_3 13
+    100318: instance_3 14
+    100320: instance_3 2
+    100322: instance_3 3
+    100324: instance_3 4
+    100326: instance_3 5
+    100328: instance_3 6
+    100330: instance_3 7
+    100332: instance_3 8
+    100334: instance_3 9
+    100336: instance_30
+    100338: instance_31
+    100340: instance_32
+    100342: instance_33
+    100344: instance_34
+    100346: instance_35
+    100348: instance_36
+    100350: instance_37
+    100352: instance_38
+    100354: instance_39
+    100356: instance_4
+    100358: instance_40
+    100360: instance_41
+    100362: instance_42
+    100364: instance_43
+    100366: instance_44
+    100368: instance_45
+    100370: instance_46
+    100372: instance_47
+    100374: instance_48
+    100376: instance_49
+    100378: instance_49 1
+    100380: instance_5
+    100382: instance_50
+    100384: instance_50 1
+    100386: instance_51
+    100388: instance_51 1
+    100390: instance_52
+    100392: instance_52 1
+    100394: instance_53
+    100396: instance_53 1
+    100398: instance_54
+    100400: instance_55
+    100402: instance_56
+    100404: instance_57
+    100406: instance_58
+    100408: instance_59
+    100410: instance_6
+    100412: instance_7
+    100414: instance_8
+    100416: instance_9
+    100418: LargeArch2
+    100420: LargeArch2 1
+    100422: LargeSupports
+    100424: LargeSupports 1
+    100426: LargeSupports 2
+    100428: LargeSupports 3
+    100430: LargeSupports 4
+    100432: LargeSupports 5
+    100434: LargeSupports 6
+    100436: LargeSupports 7
+    100438: //RootNode
+    100440: SideRail
+    100442: SideRail 1
+    100444: skp_camera_Last_Saved_SketchUp_View
+    100446: skp_camera_Scene_2
+    100448: SmallArch
+    100450: SmallArch 1
+    100452: SmallArch 10
+    100454: SmallArch 11
+    100456: SmallArch 12
+    100458: SmallArch 13
+    100460: SmallArch 14
+    100462: SmallArch 15
+    100464: SmallArch 16
+    100466: SmallArch 17
+    100468: SmallArch 18
+    100470: SmallArch 19
+    100472: SmallArch 2
+    100474: SmallArch 20
+    100476: SmallArch 21
+    100478: SmallArch 22
+    100480: SmallArch 23
+    100482: SmallArch 24
+    100484: SmallArch 25
+    100486: SmallArch 26
+    100488: SmallArch 27
+    100490: SmallArch 28
+    100492: SmallArch 29
+    100494: SmallArch 3
+    100496: SmallArch 30
+    100498: SmallArch 31
+    100500: SmallArch 32
+    100502: SmallArch 33
+    100504: SmallArch 34
+    100506: SmallArch 35
+    100508: SmallArch 36
+    100510: SmallArch 37
+    100512: SmallArch 38
+    100514: SmallArch 39
+    100516: SmallArch 4
+    100518: SmallArch 5
+    100520: SmallArch 6
+    100522: SmallArch 7
+    100524: SmallArch 8
+    100526: SmallArch 9
+    100528: smallupright
+    100530: smallupright 1
+    100532: smallupright 10
+    100534: smallupright 11
+    100536: smallupright 12
+    100538: smallupright 13
+    100540: smallupright 14
+    100542: smallupright 15
+    100544: smallupright 16
+    100546: smallupright 17
+    100548: smallupright 18
+    100550: smallupright 19
+    100552: smallupright 2
+    100554: smallupright 20
+    100556: smallupright 21
+    100558: smallupright 22
+    100560: smallupright 23
+    100562: smallupright 24
+    100564: smallupright 25
+    100566: smallupright 26
+    100568: smallupright 27
+    100570: smallupright 28
+    100572: smallupright 29
+    100574: smallupright 3
+    100576: smallupright 30
+    100578: smallupright 31
+    100580: smallupright 32
+    100582: smallupright 33
+    100584: smallupright 34
+    100586: smallupright 35
+    100588: smallupright 36
+    100590: smallupright 37
+    100592: smallupright 38
+    100594: smallupright 39
+    100596: smallupright 4
+    100598: smallupright 40
+    100600: smallupright 41
+    100602: smallupright 42
+    100604: smallupright 43
+    100606: smallupright 44
+    100608: smallupright 45
+    100610: smallupright 46
+    100612: smallupright 47
+    100614: smallupright 48
+    100616: smallupright 49
+    100618: smallupright 5
+    100620: smallupright 50
+    100622: smallupright 51
+    100624: smallupright 52
+    100626: smallupright 53
+    100628: smallupright 54
+    100630: smallupright 55
+    100632: smallupright 56
+    100634: smallupright 57
+    100636: smallupright 58
+    100638: smallupright 59
+    100640: smallupright 6
+    100642: smallupright 60
+    100644: smallupright 61
+    100646: smallupright 62
+    100648: smallupright 63
+    100650: smallupright 64
+    100652: smallupright 65
+    100654: smallupright 66
+    100656: smallupright 67
+    100658: smallupright 68
+    100660: smallupright 69
+    100662: smallupright 7
+    100664: smallupright 70
+    100666: smallupright 71
+    100668: smallupright 72
+    100670: smallupright 73
+    100672: smallupright 8
+    100674: smallupright 9
+    400000: group_0
+    400002: group_1
+    400004: group_10
+    400006: group_11
+    400008: group_12
+    400010: group_13
+    400012: group_14
+    400014: group_14 1
+    400016: group_15
+    400018: group_15 1
+    400020: group_16
+    400022: group_17
+    400024: group_18
+    400026: group_19
+    400028: group_2
+    400030: group_20
+    400032: group_21
+    400034: group_22
+    400036: group_23
+    400038: group_24
+    400040: group_25
+    400042: group_26
+    400044: group_27
+    400046: group_3
+    400048: group_4
+    400050: group_5
+    400052: group_6
+    400054: group_7
+    400056: group_8
+    400058: group_9
+    400060: ID13
+    400062: ID144
+    400064: ID144 1
+    400066: ID144 2
+    400068: ID144 3
+    400070: ID144 4
+    400072: ID231
+    400074: ID231 1
+    400076: ID249
+    400078: ID249 1
+    400080: ID48
+    400082: ID48 1
+    400084: ID48 10
+    400086: ID48 11
+    400088: ID48 12
+    400090: ID48 13
+    400092: ID48 14
+    400094: ID48 15
+    400096: ID48 16
+    400098: ID48 17
+    400100: ID48 18
+    400102: ID48 19
+    400104: ID48 2
+    400106: ID48 20
+    400108: ID48 21
+    400110: ID48 22
+    400112: ID48 23
+    400114: ID48 24
+    400116: ID48 25
+    400118: ID48 26
+    400120: ID48 27
+    400122: ID48 28
+    400124: ID48 29
+    400126: ID48 3
+    400128: ID48 30
+    400130: ID48 31
+    400132: ID48 32
+    400134: ID48 33
+    400136: ID48 34
+    400138: ID48 35
+    400140: ID48 36
+    400142: ID48 37
+    400144: ID48 4
+    400146: ID48 5
+    400148: ID48 6
+    400150: ID48 7
+    400152: ID48 8
+    400154: ID48 9
+    400156: ID66
+    400158: ID66 1
+    400160: ID66 2
+    400162: ID92
+    400164: ID92 1
+    400166: instance_0
+    400168: instance_0 1
+    400170: instance_0 10
+    400172: instance_0 11
+    400174: instance_0 12
+    400176: instance_0 13
+    400178: instance_0 14
+    400180: instance_0 2
+    400182: instance_0 3
+    400184: instance_0 4
+    400186: instance_0 5
+    400188: instance_0 6
+    400190: instance_0 7
+    400192: instance_0 8
+    400194: instance_0 9
+    400196: instance_1
+    400198: instance_1 1
+    400200: instance_1 10
+    400202: instance_1 11
+    400204: instance_1 12
+    400206: instance_1 13
+    400208: instance_1 14
+    400210: instance_1 2
+    400212: instance_1 3
+    400214: instance_1 4
+    400216: instance_1 5
+    400218: instance_1 6
+    400220: instance_1 7
+    400222: instance_1 8
+    400224: instance_1 9
+    400226: instance_10
+    400228: instance_11
+    400230: instance_12
+    400232: instance_13
+    400234: instance_14
+    400236: instance_15
+    400238: instance_16
+    400240: instance_17
+    400242: instance_18
+    400244: instance_19
+    400246: instance_2
+    400248: instance_2 1
+    400250: instance_2 10
+    400252: instance_2 11
+    400254: instance_2 12
+    400256: instance_2 13
+    400258: instance_2 14
+    400260: instance_2 2
+    400262: instance_2 3
+    400264: instance_2 4
+    400266: instance_2 5
+    400268: instance_2 6
+    400270: instance_2 7
+    400272: instance_2 8
+    400274: instance_2 9
+    400276: instance_20
+    400278: instance_21
+    400280: instance_21 1
+    400282: instance_22
+    400284: instance_22 1
+    400286: instance_23
+    400288: instance_23 1
+    400290: instance_24
+    400292: instance_24 1
+    400294: instance_25
+    400296: instance_25 1
+    400298: instance_26
+    400300: instance_27
+    400302: instance_28
+    400304: instance_29
+    400306: instance_3
+    400308: instance_3 1
+    400310: instance_3 10
+    400312: instance_3 11
+    400314: instance_3 12
+    400316: instance_3 13
+    400318: instance_3 14
+    400320: instance_3 2
+    400322: instance_3 3
+    400324: instance_3 4
+    400326: instance_3 5
+    400328: instance_3 6
+    400330: instance_3 7
+    400332: instance_3 8
+    400334: instance_3 9
+    400336: instance_30
+    400338: instance_31
+    400340: instance_32
+    400342: instance_33
+    400344: instance_34
+    400346: instance_35
+    400348: instance_36
+    400350: instance_37
+    400352: instance_38
+    400354: instance_39
+    400356: instance_4
+    400358: instance_40
+    400360: instance_41
+    400362: instance_42
+    400364: instance_43
+    400366: instance_44
+    400368: instance_45
+    400370: instance_46
+    400372: instance_47
+    400374: instance_48
+    400376: instance_49
+    400378: instance_49 1
+    400380: instance_5
+    400382: instance_50
+    400384: instance_50 1
+    400386: instance_51
+    400388: instance_51 1
+    400390: instance_52
+    400392: instance_52 1
+    400394: instance_53
+    400396: instance_53 1
+    400398: instance_54
+    400400: instance_55
+    400402: instance_56
+    400404: instance_57
+    400406: instance_58
+    400408: instance_59
+    400410: instance_6
+    400412: instance_7
+    400414: instance_8
+    400416: instance_9
+    400418: LargeArch2
+    400420: LargeArch2 1
+    400422: LargeSupports
+    400424: LargeSupports 1
+    400426: LargeSupports 2
+    400428: LargeSupports 3
+    400430: LargeSupports 4
+    400432: LargeSupports 5
+    400434: LargeSupports 6
+    400436: LargeSupports 7
+    400438: //RootNode
+    400440: SideRail
+    400442: SideRail 1
+    400444: skp_camera_Last_Saved_SketchUp_View
+    400446: skp_camera_Scene_2
+    400448: SmallArch
+    400450: SmallArch 1
+    400452: SmallArch 10
+    400454: SmallArch 11
+    400456: SmallArch 12
+    400458: SmallArch 13
+    400460: SmallArch 14
+    400462: SmallArch 15
+    400464: SmallArch 16
+    400466: SmallArch 17
+    400468: SmallArch 18
+    400470: SmallArch 19
+    400472: SmallArch 2
+    400474: SmallArch 20
+    400476: SmallArch 21
+    400478: SmallArch 22
+    400480: SmallArch 23
+    400482: SmallArch 24
+    400484: SmallArch 25
+    400486: SmallArch 26
+    400488: SmallArch 27
+    400490: SmallArch 28
+    400492: SmallArch 29
+    400494: SmallArch 3
+    400496: SmallArch 30
+    400498: SmallArch 31
+    400500: SmallArch 32
+    400502: SmallArch 33
+    400504: SmallArch 34
+    400506: SmallArch 35
+    400508: SmallArch 36
+    400510: SmallArch 37
+    400512: SmallArch 38
+    400514: SmallArch 39
+    400516: SmallArch 4
+    400518: SmallArch 5
+    400520: SmallArch 6
+    400522: SmallArch 7
+    400524: SmallArch 8
+    400526: SmallArch 9
+    400528: smallupright
+    400530: smallupright 1
+    400532: smallupright 10
+    400534: smallupright 11
+    400536: smallupright 12
+    400538: smallupright 13
+    400540: smallupright 14
+    400542: smallupright 15
+    400544: smallupright 16
+    400546: smallupright 17
+    400548: smallupright 18
+    400550: smallupright 19
+    400552: smallupright 2
+    400554: smallupright 20
+    400556: smallupright 21
+    400558: smallupright 22
+    400560: smallupright 23
+    400562: smallupright 24
+    400564: smallupright 25
+    400566: smallupright 26
+    400568: smallupright 27
+    400570: smallupright 28
+    400572: smallupright 29
+    400574: smallupright 3
+    400576: smallupright 30
+    400578: smallupright 31
+    400580: smallupright 32
+    400582: smallupright 33
+    400584: smallupright 34
+    400586: smallupright 35
+    400588: smallupright 36
+    400590: smallupright 37
+    400592: smallupright 38
+    400594: smallupright 39
+    400596: smallupright 4
+    400598: smallupright 40
+    400600: smallupright 41
+    400602: smallupright 42
+    400604: smallupright 43
+    400606: smallupright 44
+    400608: smallupright 45
+    400610: smallupright 46
+    400612: smallupright 47
+    400614: smallupright 48
+    400616: smallupright 49
+    400618: smallupright 5
+    400620: smallupright 50
+    400622: smallupright 51
+    400624: smallupright 52
+    400626: smallupright 53
+    400628: smallupright 54
+    400630: smallupright 55
+    400632: smallupright 56
+    400634: smallupright 57
+    400636: smallupright 58
+    400638: smallupright 59
+    400640: smallupright 6
+    400642: smallupright 60
+    400644: smallupright 61
+    400646: smallupright 62
+    400648: smallupright 63
+    400650: smallupright 64
+    400652: smallupright 65
+    400654: smallupright 66
+    400656: smallupright 67
+    400658: smallupright 68
+    400660: smallupright 69
+    400662: smallupright 7
+    400664: smallupright 70
+    400666: smallupright 71
+    400668: smallupright 72
+    400670: smallupright 73
+    400672: smallupright 8
+    400674: smallupright 9
+    2300000: group_0
+    2300002: ID13
+    2300004: ID144
+    2300006: ID144 1
+    2300008: ID144 2
+    2300010: ID144 3
+    2300012: ID144 4
+    2300014: ID231
+    2300016: ID231 1
+    2300018: ID249
+    2300020: ID249 1
+    2300022: ID48
+    2300024: ID48 1
+    2300026: ID48 10
+    2300028: ID48 11
+    2300030: ID48 12
+    2300032: ID48 13
+    2300034: ID48 14
+    2300036: ID48 15
+    2300038: ID48 16
+    2300040: ID48 17
+    2300042: ID48 18
+    2300044: ID48 19
+    2300046: ID48 2
+    2300048: ID48 20
+    2300050: ID48 21
+    2300052: ID48 22
+    2300054: ID48 23
+    2300056: ID48 24
+    2300058: ID48 25
+    2300060: ID48 26
+    2300062: ID48 27
+    2300064: ID48 28
+    2300066: ID48 29
+    2300068: ID48 3
+    2300070: ID48 30
+    2300072: ID48 31
+    2300074: ID48 32
+    2300076: ID48 33
+    2300078: ID48 34
+    2300080: ID48 35
+    2300082: ID48 36
+    2300084: ID48 37
+    2300086: ID48 4
+    2300088: ID48 5
+    2300090: ID48 6
+    2300092: ID48 7
+    2300094: ID48 8
+    2300096: ID48 9
+    2300098: ID66
+    2300100: ID66 1
+    2300102: ID66 2
+    2300104: ID92
+    2300106: ID92 1
+    2300108: LargeArch2
+    2300110: LargeArch2 1
+    2300112: LargeSupports
+    2300114: LargeSupports 1
+    2300116: LargeSupports 2
+    2300118: LargeSupports 3
+    2300120: LargeSupports 4
+    2300122: LargeSupports 5
+    2300124: LargeSupports 6
+    2300126: LargeSupports 7
+    2300128: SideRail
+    2300130: SideRail 1
+    2300132: SmallArch
+    2300134: SmallArch 1
+    2300136: SmallArch 10
+    2300138: SmallArch 11
+    2300140: SmallArch 12
+    2300142: SmallArch 13
+    2300144: SmallArch 14
+    2300146: SmallArch 15
+    2300148: SmallArch 16
+    2300150: SmallArch 17
+    2300152: SmallArch 18
+    2300154: SmallArch 19
+    2300156: SmallArch 2
+    2300158: SmallArch 20
+    2300160: SmallArch 21
+    2300162: SmallArch 22
+    2300164: SmallArch 23
+    2300166: SmallArch 24
+    2300168: SmallArch 25
+    2300170: SmallArch 26
+    2300172: SmallArch 27
+    2300174: SmallArch 28
+    2300176: SmallArch 29
+    2300178: SmallArch 3
+    2300180: SmallArch 30
+    2300182: SmallArch 31
+    2300184: SmallArch 32
+    2300186: SmallArch 33
+    2300188: SmallArch 34
+    2300190: SmallArch 35
+    2300192: SmallArch 36
+    2300194: SmallArch 37
+    2300196: SmallArch 38
+    2300198: SmallArch 39
+    2300200: SmallArch 4
+    2300202: SmallArch 5
+    2300204: SmallArch 6
+    2300206: SmallArch 7
+    2300208: SmallArch 8
+    2300210: SmallArch 9
+    2300212: smallupright
+    2300214: smallupright 1
+    2300216: smallupright 10
+    2300218: smallupright 11
+    2300220: smallupright 12
+    2300222: smallupright 13
+    2300224: smallupright 14
+    2300226: smallupright 15
+    2300228: smallupright 16
+    2300230: smallupright 17
+    2300232: smallupright 18
+    2300234: smallupright 19
+    2300236: smallupright 2
+    2300238: smallupright 20
+    2300240: smallupright 21
+    2300242: smallupright 22
+    2300244: smallupright 23
+    2300246: smallupright 24
+    2300248: smallupright 25
+    2300250: smallupright 26
+    2300252: smallupright 27
+    2300254: smallupright 28
+    2300256: smallupright 29
+    2300258: smallupright 3
+    2300260: smallupright 30
+    2300262: smallupright 31
+    2300264: smallupright 32
+    2300266: smallupright 33
+    2300268: smallupright 34
+    2300270: smallupright 35
+    2300272: smallupright 36
+    2300274: smallupright 37
+    2300276: smallupright 38
+    2300278: smallupright 39
+    2300280: smallupright 4
+    2300282: smallupright 40
+    2300284: smallupright 41
+    2300286: smallupright 42
+    2300288: smallupright 43
+    2300290: smallupright 44
+    2300292: smallupright 45
+    2300294: smallupright 46
+    2300296: smallupright 47
+    2300298: smallupright 48
+    2300300: smallupright 49
+    2300302: smallupright 5
+    2300304: smallupright 50
+    2300306: smallupright 51
+    2300308: smallupright 52
+    2300310: smallupright 53
+    2300312: smallupright 54
+    2300314: smallupright 55
+    2300316: smallupright 56
+    2300318: smallupright 57
+    2300320: smallupright 58
+    2300322: smallupright 59
+    2300324: smallupright 6
+    2300326: smallupright 60
+    2300328: smallupright 61
+    2300330: smallupright 62
+    2300332: smallupright 63
+    2300334: smallupright 64
+    2300336: smallupright 65
+    2300338: smallupright 66
+    2300340: smallupright 67
+    2300342: smallupright 68
+    2300344: smallupright 69
+    2300346: smallupright 7
+    2300348: smallupright 70
+    2300350: smallupright 71
+    2300352: smallupright 72
+    2300354: smallupright 73
+    2300356: smallupright 8
+    2300358: smallupright 9
+    3300000: group_0
+    3300002: ID13
+    3300004: ID144
+    3300006: ID144 1
+    3300008: ID144 2
+    3300010: ID144 3
+    3300012: ID144 4
+    3300014: ID231
+    3300016: ID231 1
+    3300018: ID249
+    3300020: ID249 1
+    3300022: ID48
+    3300024: ID48 1
+    3300026: ID48 10
+    3300028: ID48 11
+    3300030: ID48 12
+    3300032: ID48 13
+    3300034: ID48 14
+    3300036: ID48 15
+    3300038: ID48 16
+    3300040: ID48 17
+    3300042: ID48 18
+    3300044: ID48 19
+    3300046: ID48 2
+    3300048: ID48 20
+    3300050: ID48 21
+    3300052: ID48 22
+    3300054: ID48 23
+    3300056: ID48 24
+    3300058: ID48 25
+    3300060: ID48 26
+    3300062: ID48 27
+    3300064: ID48 28
+    3300066: ID48 29
+    3300068: ID48 3
+    3300070: ID48 30
+    3300072: ID48 31
+    3300074: ID48 32
+    3300076: ID48 33
+    3300078: ID48 34
+    3300080: ID48 35
+    3300082: ID48 36
+    3300084: ID48 37
+    3300086: ID48 4
+    3300088: ID48 5
+    3300090: ID48 6
+    3300092: ID48 7
+    3300094: ID48 8
+    3300096: ID48 9
+    3300098: ID66
+    3300100: ID66 1
+    3300102: ID66 2
+    3300104: ID92
+    3300106: ID92 1
+    3300108: LargeArch2
+    3300110: LargeArch2 1
+    3300112: LargeSupports
+    3300114: LargeSupports 1
+    3300116: LargeSupports 2
+    3300118: LargeSupports 3
+    3300120: LargeSupports 4
+    3300122: LargeSupports 5
+    3300124: LargeSupports 6
+    3300126: LargeSupports 7
+    3300128: SideRail
+    3300130: SideRail 1
+    3300132: SmallArch
+    3300134: SmallArch 1
+    3300136: SmallArch 10
+    3300138: SmallArch 11
+    3300140: SmallArch 12
+    3300142: SmallArch 13
+    3300144: SmallArch 14
+    3300146: SmallArch 15
+    3300148: SmallArch 16
+    3300150: SmallArch 17
+    3300152: SmallArch 18
+    3300154: SmallArch 19
+    3300156: SmallArch 2
+    3300158: SmallArch 20
+    3300160: SmallArch 21
+    3300162: SmallArch 22
+    3300164: SmallArch 23
+    3300166: SmallArch 24
+    3300168: SmallArch 25
+    3300170: SmallArch 26
+    3300172: SmallArch 27
+    3300174: SmallArch 28
+    3300176: SmallArch 29
+    3300178: SmallArch 3
+    3300180: SmallArch 30
+    3300182: SmallArch 31
+    3300184: SmallArch 32
+    3300186: SmallArch 33
+    3300188: SmallArch 34
+    3300190: SmallArch 35
+    3300192: SmallArch 36
+    3300194: SmallArch 37
+    3300196: SmallArch 38
+    3300198: SmallArch 39
+    3300200: SmallArch 4
+    3300202: SmallArch 5
+    3300204: SmallArch 6
+    3300206: SmallArch 7
+    3300208: SmallArch 8
+    3300210: SmallArch 9
+    3300212: smallupright
+    3300214: smallupright 1
+    3300216: smallupright 10
+    3300218: smallupright 11
+    3300220: smallupright 12
+    3300222: smallupright 13
+    3300224: smallupright 14
+    3300226: smallupright 15
+    3300228: smallupright 16
+    3300230: smallupright 17
+    3300232: smallupright 18
+    3300234: smallupright 19
+    3300236: smallupright 2
+    3300238: smallupright 20
+    3300240: smallupright 21
+    3300242: smallupright 22
+    3300244: smallupright 23
+    3300246: smallupright 24
+    3300248: smallupright 25
+    3300250: smallupright 26
+    3300252: smallupright 27
+    3300254: smallupright 28
+    3300256: smallupright 29
+    3300258: smallupright 3
+    3300260: smallupright 30
+    3300262: smallupright 31
+    3300264: smallupright 32
+    3300266: smallupright 33
+    3300268: smallupright 34
+    3300270: smallupright 35
+    3300272: smallupright 36
+    3300274: smallupright 37
+    3300276: smallupright 38
+    3300278: smallupright 39
+    3300280: smallupright 4
+    3300282: smallupright 40
+    3300284: smallupright 41
+    3300286: smallupright 42
+    3300288: smallupright 43
+    3300290: smallupright 44
+    3300292: smallupright 45
+    3300294: smallupright 46
+    3300296: smallupright 47
+    3300298: smallupright 48
+    3300300: smallupright 49
+    3300302: smallupright 5
+    3300304: smallupright 50
+    3300306: smallupright 51
+    3300308: smallupright 52
+    3300310: smallupright 53
+    3300312: smallupright 54
+    3300314: smallupright 55
+    3300316: smallupright 56
+    3300318: smallupright 57
+    3300320: smallupright 58
+    3300322: smallupright 59
+    3300324: smallupright 6
+    3300326: smallupright 60
+    3300328: smallupright 61
+    3300330: smallupright 62
+    3300332: smallupright 63
+    3300334: smallupright 64
+    3300336: smallupright 65
+    3300338: smallupright 66
+    3300340: smallupright 67
+    3300342: smallupright 68
+    3300344: smallupright 69
+    3300346: smallupright 7
+    3300348: smallupright 70
+    3300350: smallupright 71
+    3300352: smallupright 72
+    3300354: smallupright 73
+    3300356: smallupright 8
+    3300358: smallupright 9
+    4300000: group_0
+    4300002: ID13
+    4300004: smallupright
+    4300006: SmallArch
+    4300008: ID48
+    4300010: LargeSupports
+    4300012: ID66
+    4300014: SmallArch
+    4300016: ID92
+    4300018: LargeSupports
+    4300020: ID144
+    4300022: LargeArch2
+    4300024: ID231
+    4300026: SideRail
+    4300028: ID249
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

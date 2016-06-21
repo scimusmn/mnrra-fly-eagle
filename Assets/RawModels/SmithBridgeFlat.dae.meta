@@ -1,0 +1,1230 @@
+fileFormatVersion: 2
+guid: f5a4c60c4bda446d88d0a06624679cb2
+timeCreated: 1466543371
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: group_0
+    100002: group_1
+    100004: group_10
+    100006: group_11
+    100008: group_12
+    100010: Group_13
+    100012: group_13
+    100014: group_14
+    100016: group_14 1
+    100018: group_15
+    100020: group_15 1
+    100022: group_16
+    100024: group_17
+    100026: Group_18
+    100028: group_18
+    100030: group_19
+    100032: group_19 1
+    100034: group_2
+    100036: group_20
+    100038: group_21
+    100040: group_22
+    100042: group_3
+    100044: group_4
+    100046: group_5
+    100048: group_5 1
+    100050: group_6
+    100052: group_6 1
+    100054: group_7
+    100056: group_7 1
+    100058: group_8
+    100060: group_9
+    100062: ID14
+    100064: ID300
+    100066: ID335
+    100068: ID365
+    100070: instance_0
+    100072: instance_0 1
+    100074: instance_1
+    100076: instance_1 1
+    100078: instance_10
+    100080: instance_10 1
+    100082: instance_11
+    100084: instance_11 1
+    100086: instance_12
+    100088: instance_12 1
+    100090: instance_13
+    100092: instance_13 1
+    100094: instance_14
+    100096: instance_14 1
+    100098: instance_15
+    100100: instance_15 1
+    100102: instance_16
+    100104: instance_16 1
+    100106: instance_17
+    100108: instance_17 1
+    100110: instance_18
+    100112: instance_18 1
+    100114: instance_19
+    100116: instance_19 1
+    100118: instance_2
+    100120: instance_2 1
+    100122: instance_20
+    100124: instance_20 1
+    100126: instance_21
+    100128: instance_21 1
+    100130: instance_22
+    100132: instance_22 1
+    100134: instance_23
+    100136: instance_23 1
+    100138: instance_24
+    100140: instance_24 1
+    100142: instance_25
+    100144: instance_25 1
+    100146: instance_26
+    100148: instance_26 1
+    100150: instance_27
+    100152: instance_27 1
+    100154: instance_27 2
+    100156: instance_27 3
+    100158: instance_28
+    100160: instance_28 1
+    100162: instance_28 2
+    100164: instance_28 3
+    100166: instance_29
+    100168: instance_29 1
+    100170: instance_29 2
+    100172: instance_29 3
+    100174: instance_3
+    100176: instance_3 1
+    100178: instance_30
+    100180: instance_30 1
+    100182: instance_30 2
+    100184: instance_30 3
+    100186: instance_31
+    100188: instance_31 1
+    100190: instance_31 2
+    100192: instance_31 3
+    100194: instance_32
+    100196: instance_32 1
+    100198: instance_32 2
+    100200: instance_32 3
+    100202: instance_33
+    100204: instance_33 1
+    100206: instance_33 2
+    100208: instance_33 3
+    100210: instance_34
+    100212: instance_34 1
+    100214: instance_34 2
+    100216: instance_34 3
+    100218: instance_35
+    100220: instance_35 1
+    100222: instance_35 2
+    100224: instance_35 3
+    100226: instance_36
+    100228: instance_36 1
+    100230: instance_36 2
+    100232: instance_36 3
+    100234: instance_37
+    100236: instance_37 1
+    100238: instance_37 2
+    100240: instance_37 3
+    100242: instance_38
+    100244: instance_38 1
+    100246: instance_38 2
+    100248: instance_38 3
+    100250: instance_39
+    100252: instance_4
+    100254: instance_4 1
+    100256: instance_40
+    100258: instance_41
+    100260: instance_42
+    100262: instance_43
+    100264: instance_44
+    100266: instance_45
+    100268: instance_46
+    100270: instance_47
+    100272: instance_48
+    100274: instance_49
+    100276: instance_5
+    100278: instance_5 1
+    100280: instance_50
+    100282: instance_51
+    100284: instance_52
+    100286: instance_53
+    100288: instance_54
+    100290: instance_55
+    100292: instance_56
+    100294: instance_57
+    100296: instance_58
+    100298: instance_59
+    100300: instance_6
+    100302: instance_6 1
+    100304: instance_60
+    100306: instance_61
+    100308: instance_62
+    100310: instance_63
+    100312: instance_64
+    100314: instance_65
+    100316: instance_66
+    100318: instance_67
+    100320: instance_68
+    100322: instance_69
+    100324: instance_7
+    100326: instance_7 1
+    100328: instance_70
+    100330: instance_71
+    100332: instance_72
+    100334: instance_73
+    100336: instance_74
+    100338: instance_75
+    100340: instance_76
+    100342: instance_77
+    100344: instance_78
+    100346: instance_79
+    100348: instance_8
+    100350: instance_8 1
+    100352: instance_80
+    100354: instance_81
+    100356: instance_82
+    100358: instance_83
+    100360: instance_84
+    100362: instance_85
+    100364: instance_86
+    100366: instance_87
+    100368: instance_88
+    100370: instance_89
+    100372: instance_89 1
+    100374: instance_9
+    100376: instance_9 1
+    100378: instance_90
+    100380: instance_90 1
+    100382: instance_91
+    100384: instance_91 1
+    100386: instance_92
+    100388: instance_92 1
+    100390: instance_93
+    100392: instance_93 1
+    100394: instance_94
+    100396: instance_94 1
+    100398: instance_95
+    100400: instance_95 1
+    100402: instance_96
+    100404: instance_96 1
+    100406: instance_97
+    100408: instance_97 1
+    100410: instance_98
+    100412: instance_98 1
+    100414: instance_99
+    100416: lamps
+    100418: lamps 1
+    100420: lamps 10
+    100422: lamps 11
+    100424: lamps 12
+    100426: lamps 13
+    100428: lamps 14
+    100430: lamps 15
+    100432: lamps 16
+    100434: lamps 17
+    100436: lamps 18
+    100438: lamps 19
+    100440: lamps 2
+    100442: lamps 20
+    100444: lamps 21
+    100446: lamps 22
+    100448: lamps 23
+    100450: lamps 24
+    100452: lamps 25
+    100454: lamps 26
+    100456: lamps 27
+    100458: lamps 28
+    100460: lamps 29
+    100462: lamps 3
+    100464: lamps 30
+    100466: lamps 31
+    100468: lamps 32
+    100470: lamps 33
+    100472: lamps 34
+    100474: lamps 35
+    100476: lamps 4
+    100478: lamps 5
+    100480: lamps 6
+    100482: lamps 7
+    100484: lamps 8
+    100486: lamps 9
+    100488: MainFullArch
+    100490: MainFullArch 1
+    100492: ShortBeams
+    100494: ShortBeams 1
+    100496: ShortBeams 10
+    100498: ShortBeams 100
+    100500: ShortBeams 101
+    100502: ShortBeams 102
+    100504: ShortBeams 103
+    100506: ShortBeams 104
+    100508: ShortBeams 105
+    100510: ShortBeams 106
+    100512: ShortBeams 107
+    100514: ShortBeams 108
+    100516: ShortBeams 109
+    100518: ShortBeams 11
+    100520: ShortBeams 110
+    100522: ShortBeams 111
+    100524: ShortBeams 112
+    100526: ShortBeams 113
+    100528: ShortBeams 114
+    100530: ShortBeams 115
+    100532: ShortBeams 116
+    100534: ShortBeams 117
+    100536: ShortBeams 118
+    100538: ShortBeams 119
+    100540: ShortBeams 12
+    100542: ShortBeams 13
+    100544: ShortBeams 14
+    100546: ShortBeams 15
+    100548: ShortBeams 16
+    100550: ShortBeams 17
+    100552: ShortBeams 18
+    100554: ShortBeams 19
+    100556: ShortBeams 2
+    100558: ShortBeams 20
+    100560: ShortBeams 21
+    100562: ShortBeams 22
+    100564: ShortBeams 23
+    100566: ShortBeams 24
+    100568: ShortBeams 25
+    100570: ShortBeams 26
+    100572: ShortBeams 27
+    100574: ShortBeams 28
+    100576: ShortBeams 29
+    100578: ShortBeams 3
+    100580: ShortBeams 30
+    100582: ShortBeams 31
+    100584: ShortBeams 32
+    100586: ShortBeams 33
+    100588: ShortBeams 34
+    100590: ShortBeams 35
+    100592: ShortBeams 36
+    100594: ShortBeams 37
+    100596: ShortBeams 38
+    100598: ShortBeams 39
+    100600: ShortBeams 4
+    100602: ShortBeams 40
+    100604: ShortBeams 41
+    100606: ShortBeams 42
+    100608: ShortBeams 43
+    100610: ShortBeams 44
+    100612: ShortBeams 45
+    100614: ShortBeams 46
+    100616: ShortBeams 47
+    100618: ShortBeams 48
+    100620: ShortBeams 49
+    100622: ShortBeams 5
+    100624: ShortBeams 50
+    100626: ShortBeams 51
+    100628: ShortBeams 52
+    100630: ShortBeams 53
+    100632: ShortBeams 54
+    100634: ShortBeams 55
+    100636: ShortBeams 56
+    100638: ShortBeams 57
+    100640: ShortBeams 58
+    100642: ShortBeams 59
+    100644: ShortBeams 6
+    100646: ShortBeams 60
+    100648: ShortBeams 61
+    100650: ShortBeams 62
+    100652: ShortBeams 63
+    100654: ShortBeams 64
+    100656: ShortBeams 65
+    100658: ShortBeams 66
+    100660: ShortBeams 67
+    100662: ShortBeams 68
+    100664: ShortBeams 69
+    100666: ShortBeams 7
+    100668: ShortBeams 70
+    100670: ShortBeams 71
+    100672: ShortBeams 72
+    100674: ShortBeams 73
+    100676: ShortBeams 74
+    100678: ShortBeams 75
+    100680: ShortBeams 76
+    100682: ShortBeams 77
+    100684: ShortBeams 78
+    100686: ShortBeams 79
+    100688: ShortBeams 8
+    100690: ShortBeams 80
+    100692: ShortBeams 81
+    100694: ShortBeams 82
+    100696: ShortBeams 83
+    100698: ShortBeams 84
+    100700: ShortBeams 85
+    100702: ShortBeams 86
+    100704: ShortBeams 87
+    100706: ShortBeams 88
+    100708: ShortBeams 89
+    100710: ShortBeams 9
+    100712: ShortBeams 90
+    100714: ShortBeams 91
+    100716: ShortBeams 92
+    100718: ShortBeams 93
+    100720: ShortBeams 94
+    100722: ShortBeams 95
+    100724: ShortBeams 96
+    100726: ShortBeams 97
+    100728: ShortBeams 98
+    100730: ShortBeams 99
+    100732: skp_camera_Last_Saved_SketchUp_View
+    100734: skp_camera_Scene_1
+    100736: SmallPylon
+    100738: SmallPylon 1
+    100740: //RootNode
+    100742: TallPylon
+    100744: TallPylon 1
+    100746: TallPylon 2
+    100748: TallPylon 3
+    100750: TallPylon 4
+    100752: TallPylon 5
+    100754: TallPylon 6
+    100756: TallPylon 7
+    100758: TallPylon 8
+    100760: VerticalCrossSupport
+    100762: VerticalCrossSupport 1
+    400000: group_0
+    400002: group_1
+    400004: group_10
+    400006: group_11
+    400008: group_12
+    400010: Group_13
+    400012: group_13
+    400014: group_14
+    400016: group_14 1
+    400018: group_15
+    400020: group_15 1
+    400022: group_16
+    400024: group_17
+    400026: Group_18
+    400028: group_18
+    400030: group_19
+    400032: group_19 1
+    400034: group_2
+    400036: group_20
+    400038: group_21
+    400040: group_22
+    400042: group_3
+    400044: group_4
+    400046: group_5
+    400048: group_5 1
+    400050: group_6
+    400052: group_6 1
+    400054: group_7
+    400056: group_7 1
+    400058: group_8
+    400060: group_9
+    400062: ID14
+    400064: ID300
+    400066: ID335
+    400068: ID365
+    400070: instance_0
+    400072: instance_0 1
+    400074: instance_1
+    400076: instance_1 1
+    400078: instance_10
+    400080: instance_10 1
+    400082: instance_11
+    400084: instance_11 1
+    400086: instance_12
+    400088: instance_12 1
+    400090: instance_13
+    400092: instance_13 1
+    400094: instance_14
+    400096: instance_14 1
+    400098: instance_15
+    400100: instance_15 1
+    400102: instance_16
+    400104: instance_16 1
+    400106: instance_17
+    400108: instance_17 1
+    400110: instance_18
+    400112: instance_18 1
+    400114: instance_19
+    400116: instance_19 1
+    400118: instance_2
+    400120: instance_2 1
+    400122: instance_20
+    400124: instance_20 1
+    400126: instance_21
+    400128: instance_21 1
+    400130: instance_22
+    400132: instance_22 1
+    400134: instance_23
+    400136: instance_23 1
+    400138: instance_24
+    400140: instance_24 1
+    400142: instance_25
+    400144: instance_25 1
+    400146: instance_26
+    400148: instance_26 1
+    400150: instance_27
+    400152: instance_27 1
+    400154: instance_27 2
+    400156: instance_27 3
+    400158: instance_28
+    400160: instance_28 1
+    400162: instance_28 2
+    400164: instance_28 3
+    400166: instance_29
+    400168: instance_29 1
+    400170: instance_29 2
+    400172: instance_29 3
+    400174: instance_3
+    400176: instance_3 1
+    400178: instance_30
+    400180: instance_30 1
+    400182: instance_30 2
+    400184: instance_30 3
+    400186: instance_31
+    400188: instance_31 1
+    400190: instance_31 2
+    400192: instance_31 3
+    400194: instance_32
+    400196: instance_32 1
+    400198: instance_32 2
+    400200: instance_32 3
+    400202: instance_33
+    400204: instance_33 1
+    400206: instance_33 2
+    400208: instance_33 3
+    400210: instance_34
+    400212: instance_34 1
+    400214: instance_34 2
+    400216: instance_34 3
+    400218: instance_35
+    400220: instance_35 1
+    400222: instance_35 2
+    400224: instance_35 3
+    400226: instance_36
+    400228: instance_36 1
+    400230: instance_36 2
+    400232: instance_36 3
+    400234: instance_37
+    400236: instance_37 1
+    400238: instance_37 2
+    400240: instance_37 3
+    400242: instance_38
+    400244: instance_38 1
+    400246: instance_38 2
+    400248: instance_38 3
+    400250: instance_39
+    400252: instance_4
+    400254: instance_4 1
+    400256: instance_40
+    400258: instance_41
+    400260: instance_42
+    400262: instance_43
+    400264: instance_44
+    400266: instance_45
+    400268: instance_46
+    400270: instance_47
+    400272: instance_48
+    400274: instance_49
+    400276: instance_5
+    400278: instance_5 1
+    400280: instance_50
+    400282: instance_51
+    400284: instance_52
+    400286: instance_53
+    400288: instance_54
+    400290: instance_55
+    400292: instance_56
+    400294: instance_57
+    400296: instance_58
+    400298: instance_59
+    400300: instance_6
+    400302: instance_6 1
+    400304: instance_60
+    400306: instance_61
+    400308: instance_62
+    400310: instance_63
+    400312: instance_64
+    400314: instance_65
+    400316: instance_66
+    400318: instance_67
+    400320: instance_68
+    400322: instance_69
+    400324: instance_7
+    400326: instance_7 1
+    400328: instance_70
+    400330: instance_71
+    400332: instance_72
+    400334: instance_73
+    400336: instance_74
+    400338: instance_75
+    400340: instance_76
+    400342: instance_77
+    400344: instance_78
+    400346: instance_79
+    400348: instance_8
+    400350: instance_8 1
+    400352: instance_80
+    400354: instance_81
+    400356: instance_82
+    400358: instance_83
+    400360: instance_84
+    400362: instance_85
+    400364: instance_86
+    400366: instance_87
+    400368: instance_88
+    400370: instance_89
+    400372: instance_89 1
+    400374: instance_9
+    400376: instance_9 1
+    400378: instance_90
+    400380: instance_90 1
+    400382: instance_91
+    400384: instance_91 1
+    400386: instance_92
+    400388: instance_92 1
+    400390: instance_93
+    400392: instance_93 1
+    400394: instance_94
+    400396: instance_94 1
+    400398: instance_95
+    400400: instance_95 1
+    400402: instance_96
+    400404: instance_96 1
+    400406: instance_97
+    400408: instance_97 1
+    400410: instance_98
+    400412: instance_98 1
+    400414: instance_99
+    400416: lamps
+    400418: lamps 1
+    400420: lamps 10
+    400422: lamps 11
+    400424: lamps 12
+    400426: lamps 13
+    400428: lamps 14
+    400430: lamps 15
+    400432: lamps 16
+    400434: lamps 17
+    400436: lamps 18
+    400438: lamps 19
+    400440: lamps 2
+    400442: lamps 20
+    400444: lamps 21
+    400446: lamps 22
+    400448: lamps 23
+    400450: lamps 24
+    400452: lamps 25
+    400454: lamps 26
+    400456: lamps 27
+    400458: lamps 28
+    400460: lamps 29
+    400462: lamps 3
+    400464: lamps 30
+    400466: lamps 31
+    400468: lamps 32
+    400470: lamps 33
+    400472: lamps 34
+    400474: lamps 35
+    400476: lamps 4
+    400478: lamps 5
+    400480: lamps 6
+    400482: lamps 7
+    400484: lamps 8
+    400486: lamps 9
+    400488: MainFullArch
+    400490: MainFullArch 1
+    400492: ShortBeams
+    400494: ShortBeams 1
+    400496: ShortBeams 10
+    400498: ShortBeams 100
+    400500: ShortBeams 101
+    400502: ShortBeams 102
+    400504: ShortBeams 103
+    400506: ShortBeams 104
+    400508: ShortBeams 105
+    400510: ShortBeams 106
+    400512: ShortBeams 107
+    400514: ShortBeams 108
+    400516: ShortBeams 109
+    400518: ShortBeams 11
+    400520: ShortBeams 110
+    400522: ShortBeams 111
+    400524: ShortBeams 112
+    400526: ShortBeams 113
+    400528: ShortBeams 114
+    400530: ShortBeams 115
+    400532: ShortBeams 116
+    400534: ShortBeams 117
+    400536: ShortBeams 118
+    400538: ShortBeams 119
+    400540: ShortBeams 12
+    400542: ShortBeams 13
+    400544: ShortBeams 14
+    400546: ShortBeams 15
+    400548: ShortBeams 16
+    400550: ShortBeams 17
+    400552: ShortBeams 18
+    400554: ShortBeams 19
+    400556: ShortBeams 2
+    400558: ShortBeams 20
+    400560: ShortBeams 21
+    400562: ShortBeams 22
+    400564: ShortBeams 23
+    400566: ShortBeams 24
+    400568: ShortBeams 25
+    400570: ShortBeams 26
+    400572: ShortBeams 27
+    400574: ShortBeams 28
+    400576: ShortBeams 29
+    400578: ShortBeams 3
+    400580: ShortBeams 30
+    400582: ShortBeams 31
+    400584: ShortBeams 32
+    400586: ShortBeams 33
+    400588: ShortBeams 34
+    400590: ShortBeams 35
+    400592: ShortBeams 36
+    400594: ShortBeams 37
+    400596: ShortBeams 38
+    400598: ShortBeams 39
+    400600: ShortBeams 4
+    400602: ShortBeams 40
+    400604: ShortBeams 41
+    400606: ShortBeams 42
+    400608: ShortBeams 43
+    400610: ShortBeams 44
+    400612: ShortBeams 45
+    400614: ShortBeams 46
+    400616: ShortBeams 47
+    400618: ShortBeams 48
+    400620: ShortBeams 49
+    400622: ShortBeams 5
+    400624: ShortBeams 50
+    400626: ShortBeams 51
+    400628: ShortBeams 52
+    400630: ShortBeams 53
+    400632: ShortBeams 54
+    400634: ShortBeams 55
+    400636: ShortBeams 56
+    400638: ShortBeams 57
+    400640: ShortBeams 58
+    400642: ShortBeams 59
+    400644: ShortBeams 6
+    400646: ShortBeams 60
+    400648: ShortBeams 61
+    400650: ShortBeams 62
+    400652: ShortBeams 63
+    400654: ShortBeams 64
+    400656: ShortBeams 65
+    400658: ShortBeams 66
+    400660: ShortBeams 67
+    400662: ShortBeams 68
+    400664: ShortBeams 69
+    400666: ShortBeams 7
+    400668: ShortBeams 70
+    400670: ShortBeams 71
+    400672: ShortBeams 72
+    400674: ShortBeams 73
+    400676: ShortBeams 74
+    400678: ShortBeams 75
+    400680: ShortBeams 76
+    400682: ShortBeams 77
+    400684: ShortBeams 78
+    400686: ShortBeams 79
+    400688: ShortBeams 8
+    400690: ShortBeams 80
+    400692: ShortBeams 81
+    400694: ShortBeams 82
+    400696: ShortBeams 83
+    400698: ShortBeams 84
+    400700: ShortBeams 85
+    400702: ShortBeams 86
+    400704: ShortBeams 87
+    400706: ShortBeams 88
+    400708: ShortBeams 89
+    400710: ShortBeams 9
+    400712: ShortBeams 90
+    400714: ShortBeams 91
+    400716: ShortBeams 92
+    400718: ShortBeams 93
+    400720: ShortBeams 94
+    400722: ShortBeams 95
+    400724: ShortBeams 96
+    400726: ShortBeams 97
+    400728: ShortBeams 98
+    400730: ShortBeams 99
+    400732: skp_camera_Last_Saved_SketchUp_View
+    400734: skp_camera_Scene_1
+    400736: SmallPylon
+    400738: SmallPylon 1
+    400740: //RootNode
+    400742: TallPylon
+    400744: TallPylon 1
+    400746: TallPylon 2
+    400748: TallPylon 3
+    400750: TallPylon 4
+    400752: TallPylon 5
+    400754: TallPylon 6
+    400756: TallPylon 7
+    400758: TallPylon 8
+    400760: VerticalCrossSupport
+    400762: VerticalCrossSupport 1
+    2300000: group_0
+    2300002: group_1
+    2300004: Group_13
+    2300006: group_14
+    2300008: group_14 1
+    2300010: group_15
+    2300012: group_15 1
+    2300014: Group_18
+    2300016: group_18
+    2300018: group_19
+    2300020: group_19 1
+    2300022: group_20
+    2300024: group_21
+    2300026: group_22
+    2300028: group_6
+    2300030: group_6 1
+    2300032: group_7
+    2300034: group_7 1
+    2300036: lamps
+    2300038: lamps 1
+    2300040: lamps 10
+    2300042: lamps 11
+    2300044: lamps 12
+    2300046: lamps 13
+    2300048: lamps 14
+    2300050: lamps 15
+    2300052: lamps 16
+    2300054: lamps 17
+    2300056: lamps 18
+    2300058: lamps 19
+    2300060: lamps 2
+    2300062: lamps 20
+    2300064: lamps 21
+    2300066: lamps 22
+    2300068: lamps 23
+    2300070: lamps 24
+    2300072: lamps 25
+    2300074: lamps 26
+    2300076: lamps 27
+    2300078: lamps 28
+    2300080: lamps 29
+    2300082: lamps 3
+    2300084: lamps 30
+    2300086: lamps 31
+    2300088: lamps 32
+    2300090: lamps 33
+    2300092: lamps 34
+    2300094: lamps 35
+    2300096: lamps 4
+    2300098: lamps 5
+    2300100: lamps 6
+    2300102: lamps 7
+    2300104: lamps 8
+    2300106: lamps 9
+    2300108: MainFullArch
+    2300110: MainFullArch 1
+    2300112: ShortBeams
+    2300114: ShortBeams 1
+    2300116: ShortBeams 10
+    2300118: ShortBeams 100
+    2300120: ShortBeams 101
+    2300122: ShortBeams 102
+    2300124: ShortBeams 103
+    2300126: ShortBeams 104
+    2300128: ShortBeams 105
+    2300130: ShortBeams 106
+    2300132: ShortBeams 107
+    2300134: ShortBeams 108
+    2300136: ShortBeams 109
+    2300138: ShortBeams 11
+    2300140: ShortBeams 110
+    2300142: ShortBeams 111
+    2300144: ShortBeams 112
+    2300146: ShortBeams 113
+    2300148: ShortBeams 114
+    2300150: ShortBeams 115
+    2300152: ShortBeams 116
+    2300154: ShortBeams 117
+    2300156: ShortBeams 118
+    2300158: ShortBeams 119
+    2300160: ShortBeams 12
+    2300162: ShortBeams 13
+    2300164: ShortBeams 14
+    2300166: ShortBeams 15
+    2300168: ShortBeams 16
+    2300170: ShortBeams 17
+    2300172: ShortBeams 18
+    2300174: ShortBeams 19
+    2300176: ShortBeams 2
+    2300178: ShortBeams 20
+    2300180: ShortBeams 21
+    2300182: ShortBeams 22
+    2300184: ShortBeams 23
+    2300186: ShortBeams 24
+    2300188: ShortBeams 25
+    2300190: ShortBeams 26
+    2300192: ShortBeams 27
+    2300194: ShortBeams 28
+    2300196: ShortBeams 29
+    2300198: ShortBeams 3
+    2300200: ShortBeams 30
+    2300202: ShortBeams 31
+    2300204: ShortBeams 32
+    2300206: ShortBeams 33
+    2300208: ShortBeams 34
+    2300210: ShortBeams 35
+    2300212: ShortBeams 36
+    2300214: ShortBeams 37
+    2300216: ShortBeams 38
+    2300218: ShortBeams 39
+    2300220: ShortBeams 4
+    2300222: ShortBeams 40
+    2300224: ShortBeams 41
+    2300226: ShortBeams 42
+    2300228: ShortBeams 43
+    2300230: ShortBeams 44
+    2300232: ShortBeams 45
+    2300234: ShortBeams 46
+    2300236: ShortBeams 47
+    2300238: ShortBeams 48
+    2300240: ShortBeams 49
+    2300242: ShortBeams 5
+    2300244: ShortBeams 50
+    2300246: ShortBeams 51
+    2300248: ShortBeams 52
+    2300250: ShortBeams 53
+    2300252: ShortBeams 54
+    2300254: ShortBeams 55
+    2300256: ShortBeams 56
+    2300258: ShortBeams 57
+    2300260: ShortBeams 58
+    2300262: ShortBeams 59
+    2300264: ShortBeams 6
+    2300266: ShortBeams 60
+    2300268: ShortBeams 61
+    2300270: ShortBeams 62
+    2300272: ShortBeams 63
+    2300274: ShortBeams 64
+    2300276: ShortBeams 65
+    2300278: ShortBeams 66
+    2300280: ShortBeams 67
+    2300282: ShortBeams 68
+    2300284: ShortBeams 69
+    2300286: ShortBeams 7
+    2300288: ShortBeams 70
+    2300290: ShortBeams 71
+    2300292: ShortBeams 72
+    2300294: ShortBeams 73
+    2300296: ShortBeams 74
+    2300298: ShortBeams 75
+    2300300: ShortBeams 76
+    2300302: ShortBeams 77
+    2300304: ShortBeams 78
+    2300306: ShortBeams 79
+    2300308: ShortBeams 8
+    2300310: ShortBeams 80
+    2300312: ShortBeams 81
+    2300314: ShortBeams 82
+    2300316: ShortBeams 83
+    2300318: ShortBeams 84
+    2300320: ShortBeams 85
+    2300322: ShortBeams 86
+    2300324: ShortBeams 87
+    2300326: ShortBeams 88
+    2300328: ShortBeams 89
+    2300330: ShortBeams 9
+    2300332: ShortBeams 90
+    2300334: ShortBeams 91
+    2300336: ShortBeams 92
+    2300338: ShortBeams 93
+    2300340: ShortBeams 94
+    2300342: ShortBeams 95
+    2300344: ShortBeams 96
+    2300346: ShortBeams 97
+    2300348: ShortBeams 98
+    2300350: ShortBeams 99
+    2300352: SmallPylon
+    2300354: SmallPylon 1
+    2300356: TallPylon
+    2300358: TallPylon 1
+    2300360: TallPylon 2
+    2300362: TallPylon 3
+    2300364: TallPylon 4
+    2300366: TallPylon 5
+    2300368: TallPylon 6
+    2300370: TallPylon 7
+    2300372: TallPylon 8
+    3300000: group_0
+    3300002: group_1
+    3300004: Group_13
+    3300006: group_14
+    3300008: group_14 1
+    3300010: group_15
+    3300012: group_15 1
+    3300014: Group_18
+    3300016: group_18
+    3300018: group_19
+    3300020: group_19 1
+    3300022: group_20
+    3300024: group_21
+    3300026: group_22
+    3300028: group_6
+    3300030: group_6 1
+    3300032: group_7
+    3300034: group_7 1
+    3300036: lamps
+    3300038: lamps 1
+    3300040: lamps 10
+    3300042: lamps 11
+    3300044: lamps 12
+    3300046: lamps 13
+    3300048: lamps 14
+    3300050: lamps 15
+    3300052: lamps 16
+    3300054: lamps 17
+    3300056: lamps 18
+    3300058: lamps 19
+    3300060: lamps 2
+    3300062: lamps 20
+    3300064: lamps 21
+    3300066: lamps 22
+    3300068: lamps 23
+    3300070: lamps 24
+    3300072: lamps 25
+    3300074: lamps 26
+    3300076: lamps 27
+    3300078: lamps 28
+    3300080: lamps 29
+    3300082: lamps 3
+    3300084: lamps 30
+    3300086: lamps 31
+    3300088: lamps 32
+    3300090: lamps 33
+    3300092: lamps 34
+    3300094: lamps 35
+    3300096: lamps 4
+    3300098: lamps 5
+    3300100: lamps 6
+    3300102: lamps 7
+    3300104: lamps 8
+    3300106: lamps 9
+    3300108: MainFullArch
+    3300110: MainFullArch 1
+    3300112: ShortBeams
+    3300114: ShortBeams 1
+    3300116: ShortBeams 10
+    3300118: ShortBeams 100
+    3300120: ShortBeams 101
+    3300122: ShortBeams 102
+    3300124: ShortBeams 103
+    3300126: ShortBeams 104
+    3300128: ShortBeams 105
+    3300130: ShortBeams 106
+    3300132: ShortBeams 107
+    3300134: ShortBeams 108
+    3300136: ShortBeams 109
+    3300138: ShortBeams 11
+    3300140: ShortBeams 110
+    3300142: ShortBeams 111
+    3300144: ShortBeams 112
+    3300146: ShortBeams 113
+    3300148: ShortBeams 114
+    3300150: ShortBeams 115
+    3300152: ShortBeams 116
+    3300154: ShortBeams 117
+    3300156: ShortBeams 118
+    3300158: ShortBeams 119
+    3300160: ShortBeams 12
+    3300162: ShortBeams 13
+    3300164: ShortBeams 14
+    3300166: ShortBeams 15
+    3300168: ShortBeams 16
+    3300170: ShortBeams 17
+    3300172: ShortBeams 18
+    3300174: ShortBeams 19
+    3300176: ShortBeams 2
+    3300178: ShortBeams 20
+    3300180: ShortBeams 21
+    3300182: ShortBeams 22
+    3300184: ShortBeams 23
+    3300186: ShortBeams 24
+    3300188: ShortBeams 25
+    3300190: ShortBeams 26
+    3300192: ShortBeams 27
+    3300194: ShortBeams 28
+    3300196: ShortBeams 29
+    3300198: ShortBeams 3
+    3300200: ShortBeams 30
+    3300202: ShortBeams 31
+    3300204: ShortBeams 32
+    3300206: ShortBeams 33
+    3300208: ShortBeams 34
+    3300210: ShortBeams 35
+    3300212: ShortBeams 36
+    3300214: ShortBeams 37
+    3300216: ShortBeams 38
+    3300218: ShortBeams 39
+    3300220: ShortBeams 4
+    3300222: ShortBeams 40
+    3300224: ShortBeams 41
+    3300226: ShortBeams 42
+    3300228: ShortBeams 43
+    3300230: ShortBeams 44
+    3300232: ShortBeams 45
+    3300234: ShortBeams 46
+    3300236: ShortBeams 47
+    3300238: ShortBeams 48
+    3300240: ShortBeams 49
+    3300242: ShortBeams 5
+    3300244: ShortBeams 50
+    3300246: ShortBeams 51
+    3300248: ShortBeams 52
+    3300250: ShortBeams 53
+    3300252: ShortBeams 54
+    3300254: ShortBeams 55
+    3300256: ShortBeams 56
+    3300258: ShortBeams 57
+    3300260: ShortBeams 58
+    3300262: ShortBeams 59
+    3300264: ShortBeams 6
+    3300266: ShortBeams 60
+    3300268: ShortBeams 61
+    3300270: ShortBeams 62
+    3300272: ShortBeams 63
+    3300274: ShortBeams 64
+    3300276: ShortBeams 65
+    3300278: ShortBeams 66
+    3300280: ShortBeams 67
+    3300282: ShortBeams 68
+    3300284: ShortBeams 69
+    3300286: ShortBeams 7
+    3300288: ShortBeams 70
+    3300290: ShortBeams 71
+    3300292: ShortBeams 72
+    3300294: ShortBeams 73
+    3300296: ShortBeams 74
+    3300298: ShortBeams 75
+    3300300: ShortBeams 76
+    3300302: ShortBeams 77
+    3300304: ShortBeams 78
+    3300306: ShortBeams 79
+    3300308: ShortBeams 8
+    3300310: ShortBeams 80
+    3300312: ShortBeams 81
+    3300314: ShortBeams 82
+    3300316: ShortBeams 83
+    3300318: ShortBeams 84
+    3300320: ShortBeams 85
+    3300322: ShortBeams 86
+    3300324: ShortBeams 87
+    3300326: ShortBeams 88
+    3300328: ShortBeams 89
+    3300330: ShortBeams 9
+    3300332: ShortBeams 90
+    3300334: ShortBeams 91
+    3300336: ShortBeams 92
+    3300338: ShortBeams 93
+    3300340: ShortBeams 94
+    3300342: ShortBeams 95
+    3300344: ShortBeams 96
+    3300346: ShortBeams 97
+    3300348: ShortBeams 98
+    3300350: ShortBeams 99
+    3300352: SmallPylon
+    3300354: SmallPylon 1
+    3300356: TallPylon
+    3300358: TallPylon 1
+    3300360: TallPylon 2
+    3300362: TallPylon 3
+    3300364: TallPylon 4
+    3300366: TallPylon 5
+    3300368: TallPylon 6
+    3300370: TallPylon 7
+    3300372: TallPylon 8
+    4300000: group_0
+    4300002: group_1
+    4300004: ShortBeams
+    4300006: MainFullArch
+    4300008: group_6
+    4300010: group_7
+    4300012: SmallPylon
+    4300014: group_14
+    4300016: group_15
+    4300018: lamps
+    4300020: TallPylon
+    4300022: Group_13
+    4300024: group_18
+    4300026: group_19
+    4300028: group_20
+    4300030: Group_18
+    4300032: group_21
+    4300034: group_19
+    4300036: group_22
+    4300038: ShortBeams
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
