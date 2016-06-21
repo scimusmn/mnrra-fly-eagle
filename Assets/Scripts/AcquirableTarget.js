@@ -12,7 +12,7 @@ function OnTriggerEnter(other:Collider) {
 	
 	if (other.gameObject.name == Constants.GO_EAGLE_NAME) {
 		
-		tg.RemoveTarget(this.gameObject);
+		tg.AcquireTarget(this.gameObject);
 
 	}
 

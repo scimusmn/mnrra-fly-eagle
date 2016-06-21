@@ -10,6 +10,7 @@ public var rotationDamping = 1.0;
 
 public var doLookAt = false;
 public var doFollow = false;
+public var doOrbit = false;
 
 function Start () {
 
@@ -54,6 +55,11 @@ function LateUpdate () {
 
 		// Set the followHeight of the camera
 		transform.position.y = currentfollowHeight;
+
+	} else if (doOrbit == true) {
+
+		
+
 	}
 
 	// Rotate camera to center target in view
