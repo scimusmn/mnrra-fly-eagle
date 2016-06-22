@@ -37,13 +37,14 @@ private var points = new List.<Vector3>();
 
 	var dist:float = Vector3.Distance(gameObject.transform.position, eagleGO.transform.position);
 
-	if (dist > 200) {
-		ringProjector.DefaultSize = 125;
+	if (dist > 260) {
+		
+		ringProjector.DefaultSize = 120;
 		ringProjector.DefaultColor.a = 1.0f;
 	} else {
 		// Once closer than 200 units, start shrinking ring.
-		ringProjector.DefaultSize = Utils.Map(dist, 0, 199, 0, 125);
-		ringProjector.DefaultColor.a = Utils.Map(dist, 0, 200, -0.5, 1.0);
+		ringProjector.DefaultSize = Utils.Map(dist, 40, 260, 5, 120);
+		ringProjector.DefaultColor.a = Utils.Map(dist, 50.0, 250, 0.0, 1.0);
 	}
 
  }
