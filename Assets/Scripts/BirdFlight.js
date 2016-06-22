@@ -86,6 +86,9 @@ function Update () {
         // Update camera to fall back when boosting.
 	    followCam.boostFollowDistance = dampSpeedBoost * 4.5;
 
+	    // Camera lowers slightly when boosting
+	    followCam.boostFollowHeight = dampSpeedBoost * 3.14;
+
         // Reduce the boost speed over time.
 	    speedBoost -= 0.001;
 	    if (speedBoost < 0.0) {
