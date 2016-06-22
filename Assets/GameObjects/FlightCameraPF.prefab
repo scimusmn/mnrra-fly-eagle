@@ -95,12 +95,13 @@ MonoBehaviour:
   target: {fileID: 0}
   followDistance: 2.5
   boostFollowDistance: 0
-  followHeight: 0
+  followHeight: 0.5
   boostFollowHeight: 0
   followHeightDamping: 5
   rotationDamping: 4
   doLookAt: 0
   doFollow: 0
+  doOrbit: 0
 --- !u!114 &11460174
 MonoBehaviour:
   m_ObjectHideFlags: 1

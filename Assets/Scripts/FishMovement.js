@@ -71,7 +71,12 @@ private var points = new List.<Vector3>();
 
  function NextTargetPosition():Vector3 {
 
- 	var rIndex:int = Random.Range(0, points.Count);
+	points.Sort(function(c1:Vector3, c2:Vector3){
+		return Vector3.Distance(this.transform.position, c1).CompareTo((Vector3.Distance(this.transform.position, c2)));   
+	});
+
+ 	// Choose one of the closest nodes. (the closest is the one it is on)
+ 	var rIndex:int = Random.Range(1, 2);
  	return points[rIndex];
 
  }

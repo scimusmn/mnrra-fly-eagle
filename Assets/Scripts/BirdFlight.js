@@ -144,6 +144,23 @@ public function UpdateFlapState(wingLeftAngle:float, wingRightAngle:float) {
     // Average both wing angles (birds never flap one wing)
     var avgAngle = (wingLeftAngle + (-1 * wingRightAngle)) / 2;
 
+    // Clamp wing angle
+    avgAngle = Mathf.Clamp(avgAngle, -55.0, 41.0);
+
+    if(avgAngle < -5.0){
+    	// shift wing up
+    	leftWing.transform.localPosition.y = 2.0 + Utils.Map(avgAngle, -55, -5.0, 0.15, 0.0);
+    	rightWing.transform.localPosition.y = 2.0 + Utils.Map(avgAngle, -55, -5.0, 0.15, 0.0);
+    	// shift wing in
+    	leftWing.transform.localPosition.x = -0.5 + Utils.Map(avgAngle, -55, -5.0, 0.25, 0.0);
+    	rightWing.transform.localPosition.x = 0.5 - Utils.Map(avgAngle, -55, -5.0, 0.25, 0.0);
+    }else{
+    	leftWing.transform.localPosition.y = 2.0;
+    	rightWing.transform.localPosition.y = 2.0;
+    	leftWing.transform.localPosition.x = -0.5;
+    	rightWing.transform.localPosition.x = 0.5;
+    }
+
     leftWing.transform.localEulerAngles.z = avgAngle;
     rightWing.transform.localEulerAngles.z = avgAngle * -1;
 

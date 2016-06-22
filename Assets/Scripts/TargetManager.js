@@ -20,7 +20,7 @@ function Start () {
 	}
 
 	//Temp- Add first target
-	Invoke('AddTarget', 7);
+	//Invoke('AddTarget', 7);
 
 }
 
@@ -61,10 +61,13 @@ public function AddTarget(type:String) {
 
 	} else {
 
-		newObj = GameObject.Instantiate(nestPrefab);
+		//newObj = GameObject.Instantiate(nestPrefab);
 
 		// add ArrowIndicator
-		newObj.transform.localPosition = Vector3(Random.Range(-1000, 1000), 16.5, Random.Range(-1000, 1000));
+		//newObj.transform.localPosition = Vector3(Random.Range(-1000, 1000), 16.5, Random.Range(-1000, 1000));
+
+		// Find nest already on map.
+		newObj = GameObject.Find('NestTree');
 		offScreenIndicator.AddIndicator(newObj.transform, indicatorId);
 
 	}
