@@ -84,13 +84,16 @@ function Update () {
 	    transform.Translate( 0, dampAltitudeBoost, dampSpeedBoost);
 
         // Update camera to fall back when boosting.
-	    followCam.boostFollowDistance = dampSpeedBoost * 3.0;
+	    followCam.boostFollowDistance = dampSpeedBoost * 2.6;
 
 	    // Camera lowers slightly when boosting
-	    followCam.boostFollowHeight = dampSpeedBoost * 2;
+	    followCam.boostFollowHeight = dampSpeedBoost * 1.5;
+
+	    //TEMP - raise camtarget when fast
+	    transform.Find("CamTarget").transform.localPosition.y = Utils.Map(dampSpeedBoost, 0, 2, 3.75, 15.0);
 
         // Reduce the boost speed over time.
-	    speedBoost -= 0.0015;
+	    speedBoost -= 0.001;
 	    if (speedBoost < 0.0) {
 	        speedBoost = 0.0;
 	    } else if (speedBoost > 1.0) {
@@ -115,8 +118,8 @@ public function Flap() {
 
 	// Make first flap most powerful
 	if (speedBoost == 0.0) {
-		speedBoost += 0.25f;
-		altitudeBoost += 0.07f;
+		speedBoost += 0.2f;
+		altitudeBoost += 0.05f;
 	} else {
 		speedBoost += 0.15f;
 		altitudeBoost += 0.2f;
