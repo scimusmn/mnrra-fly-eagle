@@ -10,6 +10,8 @@ public var fishPrefab:GameObject;
 public var offScreenIndicator:OffScreenIndicator;
 
 private var fishNodes :GameObject[];
+private var fishUnderEagle :GameObject;
+public var splashPrefab: GameObject;
 
 function Start () {
 
@@ -23,6 +25,9 @@ function Start () {
 
 	// Fina all starting points for fish
 	fishNodes = GameObject.FindGameObjectsWithTag('FishNode');
+
+	fishUnderEagle = GameObject.Find(Constants.GO_EAGLE_NAME).Find('fish');
+	fishUnderEagle.active = false;
 
 	//Temp- Add first target
 	//Invoke('AddTarget', 7);
@@ -89,11 +94,19 @@ public function AcquireTarget(objToRemove:GameObject) {
 
 		// CAUGHT FISH
 
-		// Remove Fish
+		// Cue large large splash
+		var splashClone:GameObject = Instantiate(splashPrefab, objToRemove.transform.position, Quaternion.identity);
+		Destroy (splashClone, 4.0f);
+
+		// Remove Fish from water
 		Destroy(objToRemove);
 
 		// TODO: Show catch animation.
-		// TODO: Attach fish to eagle model
+
+		// TODO: Should we force them to pull up at this point?
+
+		// Show fish under eagle
+		fishUnderEagle.active = true;
 
 		// Target nest.
 		AddTarget('nest');
@@ -105,8 +118,15 @@ public function AcquireTarget(objToRemove:GameObject) {
 		// Remove target indicator
 		offScreenIndicator.RemoveIndicator(objToRemove.transform);
 
-		// Spawn fish to hunt
-		AddTarget('fish');
+		// Remove fish if being carried
+		if (fishUnderEagle.active == true) {
+
+			fishUnderEagle.active = false;
+
+			// Spawn new fish to hunt
+			AddTarget('fish');
+
+		}
 
 	}
 

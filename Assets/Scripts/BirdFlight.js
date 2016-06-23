@@ -69,7 +69,7 @@ function Update () {
     //transform.localEulerAngles.y = y * yawMax;
 
     // Update camera height based on Pitch.
-	followCam.boostFollowHeight = Mathf.Clamp(-Utils.Map(wingSpanPitch, -1, 1, -0.45, 0.45), -0.3, 0.3);
+	followCam.boostFollowHeight = Mathf.Clamp(-Utils.Map(wingSpanPitch, -1, 1, -0.77, 0.77), -0.7, 0.7);
 
 	// If flap boosting, apply here.
 	if (speedBoost > 0.0 || dampSpeedBoost > 0.001) {
@@ -84,13 +84,10 @@ function Update () {
 	    transform.Translate( 0, dampAltitudeBoost, dampSpeedBoost);
 
         // Update camera to fall back when boosting.
-	    followCam.boostFollowDistance = dampSpeedBoost * 2.6;
+	    followCam.boostFollowDistance = dampSpeedBoost * 0.75;
 
-	    // Camera lowers slightly when boosting
-	    followCam.boostFollowHeight = dampSpeedBoost * 1.5;
-
-	    //TEMP - raise camtarget when fast
-	    transform.Find("CamTarget").transform.localPosition.y = Utils.Map(dampSpeedBoost, 0, 2, 3.75, 15.0);
+	    //temp- shifts camera target higher when boosting
+	    //transform.Find("CamTarget").transform.localPosition.y = Utils.Map(dampSpeedBoost, 0, 2, 3.75, 3.0);
 
         // Reduce the boost speed over time.
 	    speedBoost -= 0.001;
@@ -118,12 +115,12 @@ public function Flap() {
 
 	// Make first flap most powerful
 	if (speedBoost == 0.0) {
-		speedBoost += 0.2f;
-		altitudeBoost += 0.05f;
+		speedBoost += 0.4f;
+		altitudeBoost += 0.025f;
 	} else {
 		speedBoost += 0.15f;
-		altitudeBoost += 0.2f;
-		altitudeBoost *= 1.2f; // Altitude momentum
+		altitudeBoost += 0.025f;
+		altitudeBoost *= 1.25f; // Altitude momentum
 	}
 
 }

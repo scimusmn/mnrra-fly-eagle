@@ -75,7 +75,7 @@ MonoBehaviour:
     transition: 0
     transitionDuration: 0
   - onScreenSprite: {fileID: 21300000, guid: 4ecf520a92b72407a836ef41c1b08900, type: 3}
-    onScreenColor: {r: 1, g: 1, b: 0, a: 0.778}
+    onScreenColor: {r: 1, g: 1, b: 0, a: 0.94}
     onScreenRotates: 0
     offScreenSprite: {fileID: 0}
     offScreenColor: {r: 0.16862746, g: 0.854902, b: 0.45882356, a: 1}
@@ -98,6 +98,7 @@ MonoBehaviour:
   nestPrefab: {fileID: 131114, guid: 3e13f0260b6c020479c3f94e92838a22, type: 2}
   fishPrefab: {fileID: 127510, guid: f22ff0912d358477e83e82fc928941d7, type: 2}
   offScreenIndicator: {fileID: 11492914}
+  splashPrefab: {fileID: 100002, guid: 06be2c01b080a3f42856a4b2abd595a8, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
