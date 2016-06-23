@@ -9,6 +9,8 @@ public var nestPrefab:GameObject;
 public var fishPrefab:GameObject;
 public var offScreenIndicator:OffScreenIndicator;
 
+private var fishNodes :GameObject[];
+
 function Start () {
 
 	if (!nestPrefab) {
@@ -18,6 +20,9 @@ function Start () {
 	if (!offScreenIndicator) {
 		Debug.LogError('TargetGenerator.js: Set offScreenIndicator', offScreenIndicator);
 	}
+
+	// Fina all starting points for fish
+	fishNodes = GameObject.FindGameObjectsWithTag('FishNode');
 
 	//Temp- Add first target
 	//Invoke('AddTarget', 7);
@@ -56,7 +61,6 @@ public function AddTarget(type:String) {
 		offScreenIndicator.AddIndicator(newObj.transform, indicatorId);
 
 		// position at one of the fish nodes
-		var fishNodes :GameObject[] = GameObject.FindGameObjectsWithTag('FishNode');
 		newObj.transform.localPosition = fishNodes[Random.Range(0,fishNodes.Length)].transform.position;
 
 	} else {
