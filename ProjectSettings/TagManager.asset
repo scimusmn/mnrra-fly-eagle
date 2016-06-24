@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - FishNode
+  - RiverboatNode
+  - RobertBridgeNode
+  - AIFlightNode
   layers:
   - Default
   - TransparentFX

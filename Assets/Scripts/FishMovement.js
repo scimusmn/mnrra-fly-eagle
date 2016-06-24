@@ -35,6 +35,7 @@ private var points = new List.<Vector3>();
 
  function LateUpdate() {
 
+	// Set indicator ring size based on distance from eagle
 	var dist:float = Vector3.Distance(gameObject.transform.position, eagleGO.transform.position);
 
 	if (dist > 260) {
