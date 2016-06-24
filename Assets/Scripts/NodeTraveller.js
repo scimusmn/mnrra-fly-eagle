@@ -2,14 +2,17 @@
 import System.Collections.Generic;
 
 var nodeTag:String = '';
-var pauseTime : float = 1.0;
+var pauseTime : float = 0.0;
+var loopPause : float = 0.0;
 var moveSpeed : float = 1.5;
+private var smoothRotation : boolean = false; // TODO - not ready yet
 
 var movementStyle:MovementStyle;
 enum MovementStyle { localRandom, globalRandom, fullLoop, respawnLoop, pingPong }
 
 private var nodeIndex:int = -1;
 private var targetPosition : Vector3;
+private var nextTargetPosition : Vector3;
 private var points = new List.<Vector3>();
 private var direction :int = 1;
 
@@ -27,10 +30,10 @@ function Start () {
 	// To control order of movement, name node objects accordingly (e.g. node_1, node_2, node_3,...)
 	nodes.Sort(nodes, function(g1,g2) String.Compare(g1.name, g2.name));
 
-	//Temp
-	for(var o in nodes){
-		Debug.Log(o.name);
-	}
+	// For Debug - print node order
+//	for(var o in nodes){
+//		Debug.Log(o.name);
+//	}
 
 	for (var go : GameObject in nodes) {
 		var pos:Vector3 = go.transform.position;
@@ -44,6 +47,12 @@ function Start () {
 
 function Update () {
 
+	// TODO - needs to smooth between current direction and direction needed for next turn
+	if (smoothRotation == true) {
+		// Smooth towards current movement direction
+		transform.rotation = Quaternion.Slerp( transform.rotation, Quaternion.LookRotation( targetPosition - transform.position ), Time.deltaTime );
+	}
+
 }
 
 function MoveAndPause() {
@@ -55,7 +64,10 @@ function MoveAndPause() {
 
 		// Face towards new target
 		// TODO - smooth out rotation so there isn't a "snap" after each node
-		transform.LookAt(targetPosition);
+
+		if (smoothRotation == false) {
+			transform.LookAt(targetPosition);
+		}
 		 
 		while (transform.position != targetPosition) {
 			transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * moveSpeed);

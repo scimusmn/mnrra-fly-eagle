@@ -46,9 +46,11 @@ function Start () {
 function Update () {
 
 	// Forward movement
-	if (Input.GetKey(KeyCode.W)){
+	if (Input.GetKey(KeyCode.W)){ // Warp
       transform.Translate( 0, 0, warpSpeed);
-    } else {
+    } else if (Input.GetKey(KeyCode.S)) { // Slow
+    	transform.Translate( 0, 0, baseSpeed/10);
+    } else { // Normal
     	transform.Translate( 0, 0, baseSpeed);
     }
 
