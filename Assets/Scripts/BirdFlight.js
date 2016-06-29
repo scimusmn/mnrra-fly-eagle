@@ -73,6 +73,13 @@ function Update () {
     // Update camera height based on Pitch.
 	followCam.boostFollowHeight = Mathf.Clamp(-Utils.Map(wingSpanPitch, -1, 1, -0.77, 0.77), -0.7, 0.7);
 
+	// Boost adjust when pointed downwards or upwards
+	if (wingSpanPitch < -0.4) {
+		speedBoost += 0.01;
+	} else if (wingSpanPitch > 0.2) {
+		speedBoost -= 0.005;
+	}
+
 	// If flap boosting, apply here.
 	if (speedBoost > 0.0 || dampSpeedBoost > 0.001) {
 
