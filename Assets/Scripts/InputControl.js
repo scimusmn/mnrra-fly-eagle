@@ -38,6 +38,11 @@ function Start () {
     // Set defaults
     birdFlight.UpdateInputs(0.0, 0.0, 0.0);
 
+    // Once scene starts, check if user is active.
+    // If not, assume there is no one using, 
+    // begin "screensaver" AI flight.
+    CheckForScreensaverMode();
+
 }
 
 function Update () {
@@ -149,6 +154,24 @@ function kinectUpdate() {
     }
 
 }
+
+function CheckForScreensaverMode() {
+
+	yield WaitForSeconds(3);
+
+	var manager = KinectManager.Instance;
+
+	if(manager && manager.IsInitialized()){
+        var userId = manager.GetPrimaryUserID();
+        if (!userId || userId <= 0) {
+            // No players available...
+            print('No user active. Start screensaver mode');
+            return;
+        }
+
+    }
+
+}	
 
 function GestureUpdate(gesture:Gesture) {
 	if (gesture == Gesture.TPose) {

@@ -2,7 +2,7 @@
 import System.Collections.Generic;
 
 var nodeTag:String = '';
-var pauseTime : float = 0.0;
+var nodePause : float = 0.0;
 var loopPause : float = 0.0;
 var moveSpeed : float = 1.5;
 private var smoothRotation : boolean = false; // TODO - not ready yet
@@ -62,6 +62,13 @@ function MoveAndPause() {
 		// Decide next travel destination
 		targetPosition = NextTargetPosition();
 
+		if (movementStyle == MovementStyle.respawnLoop && nodeIndex == 1) {
+			yield WaitForSeconds(loopPause);
+		}
+//		if (movementStyle == MovementStyle.pingPong && nodeIndex == 1){
+//			yield WaitForSeconds(loopPause);
+//		}
+
 		// Face towards new target
 		// TODO - smooth out rotation so there isn't a "snap" after each node
 
@@ -74,12 +81,11 @@ function MoveAndPause() {
 			yield;
 		}
 
-		yield WaitForSeconds(pauseTime);
+		yield WaitForSeconds(nodePause);
 
 	}
 
  }
-
 
 function NextTargetPosition():Vector3 {
 
