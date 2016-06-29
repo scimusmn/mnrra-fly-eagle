@@ -8,6 +8,9 @@ TagManager:
   - RiverboatNode
   - RobertBridgeNode
   - AIFlightNode
+  - SmithBridgeNode
+  - WabashaBridgeNode
+  - TrainNode
   layers:
   - Default
   - TransparentFX
