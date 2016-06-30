@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/StPaulScene.unity
+- path: Assets/Scenes/NodeTravellerTests.unity
   isLoaded: 1
   isActive: 1
