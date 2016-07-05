@@ -1,7 +1,7 @@
 ﻿#pragma strict
 
-public var from:Vector3 = new Vector3(0f, 0f, 135f);
-public var to:Vector3   = new Vector3(0f, 0f, 225f);
+public var from:Vector3 = new Vector3(0f, 0f, 0f);
+public var to:Vector3   = new Vector3(0f, 0f, 0f);
 public var speed:float = 1.0f;
 
 function Start () {

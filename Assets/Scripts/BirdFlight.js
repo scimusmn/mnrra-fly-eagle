@@ -49,7 +49,8 @@ function Update () {
 	if (Input.GetKey(KeyCode.W)){ // Warp
       transform.Translate( 0, 0, warpSpeed);
     } else if (Input.GetKey(KeyCode.S)) { // Slow
-    	transform.Translate( 0, 0, baseSpeed/10);
+    	transform.Translate( 0, 0, baseSpeed/25);
+    	speedBoost = 0.0;
     } else { // Normal
     	transform.Translate( 0, 0, baseSpeed);
     }
@@ -74,10 +75,12 @@ function Update () {
 	followCam.boostFollowHeight = Mathf.Clamp(-Utils.Map(wingSpanPitch, -1, 1, -0.77, 0.77), -0.7, 0.7);
 
 	// Boost adjust when pointed downwards or upwards
-	if (wingSpanPitch < -0.4) {
-		speedBoost += 0.01;
+	if (wingSpanPitch < -0.25) {
+		var diveBoost:float = Utils.Map(wingSpanPitch, -0.25, -1.0, 0.002, 0.015);
+		speedBoost += diveBoost;
 	} else if (wingSpanPitch > 0.2) {
-		speedBoost -= 0.005;
+		var pullBoost:float = Utils.Map(wingSpanPitch, 0.2, 1.0, 0.005, 0.015);
+		speedBoost -= pullBoost;
 	}
 
 	// If flap boosting, apply here.
