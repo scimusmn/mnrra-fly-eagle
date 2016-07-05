@@ -5,7 +5,6 @@ var nodeTag:String = '';
 var nodePause : float = 0.0;
 var loopPause : float = 0.0;
 var moveSpeed : float = 1.5;
-private var smoothRotation : boolean = false; // TODO - not ready yet
 
 var movementStyle:MovementStyle;
 enum MovementStyle { localRandom, globalRandom, fullLoop, respawnLoop, pingPong }
@@ -15,6 +14,7 @@ private var targetPosition : Vector3;
 private var nextTargetPosition : Vector3;
 private var points = new List.<Vector3>();
 private var direction :int = 1;
+private var hasLooped = false;
 
 function Start () {
 
@@ -47,12 +47,6 @@ function Start () {
 
 function Update () {
 
-	// TODO - needs to smooth between current direction and direction needed for next turn
-	if (smoothRotation == true) {
-		// Smooth towards current movement direction
-		transform.rotation = Quaternion.Slerp( transform.rotation, Quaternion.LookRotation( targetPosition - transform.position ), Time.deltaTime );
-	}
-
 }
 
 function MoveAndPause() {
@@ -62,20 +56,12 @@ function MoveAndPause() {
 		// Decide next travel destination
 		targetPosition = NextTargetPosition();
 
-		if (movementStyle == MovementStyle.respawnLoop && nodeIndex == 1) {
+		// Check for loop pausing
+		if (hasLooped == true) {
 			yield WaitForSeconds(loopPause);
+			hasLooped = false;
 		}
-//		if (movementStyle == MovementStyle.pingPong && nodeIndex == 1){
-//			yield WaitForSeconds(loopPause);
-//		}
 
-		// Face towards new target
-		// TODO - smooth out rotation so there isn't a "snap" after each node
-
-		if (smoothRotation == false) {
-			transform.LookAt(targetPosition);
-		}
-		 
 		while (transform.position != targetPosition) {
 			transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * moveSpeed);
 			yield;
@@ -118,6 +104,7 @@ function NextTargetPosition():Vector3 {
 		// If on last, travel back to first
 		if (nodeIndex >= points.Count){
 			nodeIndex = 0;
+			hasLooped = true;
 		}
 
 	} else if (movementStyle == MovementStyle.respawnLoop) {
@@ -131,6 +118,7 @@ function NextTargetPosition():Vector3 {
 
 			transform.position = points[0];
 			nodeIndex = 1;
+			hasLooped = true;
 
 		}
 
@@ -145,8 +133,9 @@ function NextTargetPosition():Vector3 {
 
 			direction *= -1;
 			nodeIndex += (direction * 2);
+			hasLooped = true;
 
-		}	
+		}
 
 	}
 

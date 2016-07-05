@@ -665,9 +665,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeTag: SmithBridgeNode
-  pauseTime: 0
+  nodePause: 0
   loopPause: 0
-  moveSpeed: 20
+  moveSpeed: 25
   movementStyle: 4
 --- !u!136 &13601710
 CapsuleCollider:
