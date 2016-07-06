@@ -32,6 +32,8 @@ private var flapHistory : List.<float> = new List.<float>();
 private var prevFlapState : float;
 private var hasFlapped : boolean = false;
 
+private var forcePullUp : float = 0.0;
+
 function Start () {
 
 	rb = this.gameObject.GetComponent(Rigidbody);
@@ -53,6 +55,11 @@ function Update () {
     	speedBoost = 0.0;
     } else { // Normal
     	transform.Translate( 0, 0, baseSpeed);
+    }
+
+    // Keep on top of water.
+    if (forcePullUp != 0.0 && wingSpanPitch <= 0.0) {
+    	transform.position.y = forcePullUp;
     }
 
     var h = wingSpanAngle;
@@ -230,7 +237,7 @@ private function updateFlapDetection(newFlapState:float) {
     // and hasn't already triggered flap.
     if (hasFlapped == false && flapSum > 10.0) {
         // A flap has taken place.
-        print('-> FLAP! /  ' + flapSum);
+        //print('-> FLAP! /  ' + flapSum);
         hasFlapped = true;
         return true;
     } else {
@@ -254,5 +261,19 @@ public function noInputUpdate() {
 
     this.UpdateInputs( lerpedInputs.x, lerpedInputs.y, lerpedInputs.z );
     this.UpdateFlapState( lerpedFlap, -lerpedFlap );
+
+}
+
+public function ForcePullUp(toAltitude : float) {
+
+    forcePullUp = toAltitude;
+    print('pull up: ' + toAltitude);
+
+}
+
+public function StopPullUp() {
+
+	print('stop pull up');
+    forcePullUp = 0.0;
 
 }
