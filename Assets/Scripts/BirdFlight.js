@@ -34,6 +34,8 @@ private var hasFlapped : boolean = false;
 
 private var forcePullUp : float = 0.0;
 
+private var soundManager:SoundManager;
+
 function Start () {
 
 	rb = this.gameObject.GetComponent(Rigidbody);
@@ -42,6 +44,9 @@ function Start () {
 
 	leftWing = transform.Find("LeftWingParent");
 	rightWing = transform.Find("RightWingParent");
+
+	soundManager = FindObjectOfType(SoundManager);
+	soundManager.startLoop(1);
 
 }
 
@@ -105,9 +110,6 @@ function Update () {
         // Update camera to fall back when boosting.
 	    followCam.boostFollowDistance = dampSpeedBoost * 0.75;
 
-	    //temp- shifts camera target higher when boosting
-	    //transform.Find("CamTarget").transform.localPosition.y = Utils.Map(dampSpeedBoost, 0, 2, 3.75, 3.0);
-
         // Reduce the boost speed over time.
 	    speedBoost -= 0.001;
 	    if (speedBoost < 0.0) {
@@ -126,6 +128,9 @@ function Update () {
 	        altitudeBoost = 1.5;
 	    }
 
+	    // Update wind volume
+	    soundManager.setLoopVolume(Utils.Map(speedBoost, 0, 1, 0.1, 0.5));
+
 	}
 
 }
@@ -141,6 +146,9 @@ public function Flap() {
 		altitudeBoost += 0.025f;
 		altitudeBoost *= 1.25f; // Altitude momentum
 	}
+
+	// Play flap sound effect
+	soundManager.play(0);
 
 }
 
@@ -273,7 +281,7 @@ public function ForcePullUp(toAltitude : float) {
 
 public function StopPullUp() {
 
-	print('stop pull up');
     forcePullUp = 0.0;
+    print('stop pull up');
 
 }

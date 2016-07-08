@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11448264}
   - 114: {fileID: 11492914}
   - 114: {fileID: 11498610}
+  - 114: {fileID: 11462334}
   m_Layer: 0
   m_Name: ManagerPF
   m_TagString: Untagged
@@ -27,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -44,6 +46,17 @@ MonoBehaviour:
   FadeImg: {fileID: 0}
   fadeSpeed: 1.5
   sceneStarting: 1
+--- !u!114 &11462334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8256c0605d4a54e1c885c60bb9ab3291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11492914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65,20 +78,20 @@ MonoBehaviour:
   Canvas_border: 25
   Canvas_indicatorSize: 50
   indicators:
-  - onScreenSprite: {fileID: 21300000, guid: 5f7bd07bc1344e944a3c06c59c1ff34d, type: 3}
-    onScreenColor: {r: 0.094885364, g: 0.8602941, b: 0.44855687, a: 1}
+  - onScreenSprite: {fileID: 21300000, guid: a96004b32c173471d9927206f8333eb5, type: 3}
+    onScreenColor: {r: 0.956, g: 0.366, b: 0.2647059, a: 1}
     onScreenRotates: 0
     offScreenSprite: {fileID: 21300000, guid: c94b23e59bd617e43ae03cc154ec0cb0, type: 3}
-    offScreenColor: {r: 0.09411766, g: 0.8588236, b: 0.44705886, a: 1}
+    offScreenColor: {r: 0.9568628, g: 0.3647059, b: 0.26666668, a: 1}
     offScreenRotates: 1
-    targetOffset: {x: 0, y: 0, z: 0}
+    targetOffset: {x: 0, y: 55, z: 0}
     transition: 0
     transitionDuration: 0
   - onScreenSprite: {fileID: 21300000, guid: 4ecf520a92b72407a836ef41c1b08900, type: 3}
-    onScreenColor: {r: 1, g: 1, b: 0, a: 0.94}
+    onScreenColor: {r: 1, g: 1, b: 0, a: 0.965}
     onScreenRotates: 0
     offScreenSprite: {fileID: 0}
-    offScreenColor: {r: 0.16862746, g: 0.854902, b: 0.45882356, a: 1}
+    offScreenColor: {r: 1, g: 1, b: 1, a: 1}
     offScreenRotates: 0
     targetOffset: {x: 0, y: 60, z: 0}
     transition: 2
