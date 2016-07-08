@@ -54,7 +54,7 @@ function Update () {
 
 	// Forward movement
 	if (Input.GetKey(KeyCode.W)){ // Warp
-      transform.Translate( 0, 0, warpSpeed);
+    	transform.Translate( 0, 0, warpSpeed);
     } else if (Input.GetKey(KeyCode.S)) { // Slow
     	transform.Translate( 0, 0, baseSpeed/25);
     	speedBoost = 0.0;
@@ -131,6 +131,19 @@ function Update () {
 	    // Update wind volume
 	    soundManager.setLoopVolume(Utils.Map(speedBoost, 0, 1, 0.1, 0.5));
 
+	}
+
+}
+
+function LateUpdate () {
+
+	// TODO - first, get whichever terrain is below eagle.
+	// Currently only is working on one terrain
+
+	// Stay above terrain.
+	var curTerrainHeight : float = Terrain.activeTerrain.SampleHeight(transform.position);
+	if (transform.position.y < curTerrainHeight) {
+		transform.position.y = curTerrainHeight;
 	}
 
 }
@@ -275,13 +288,11 @@ public function noInputUpdate() {
 public function ForcePullUp(toAltitude : float) {
 
     forcePullUp = toAltitude;
-    print('pull up: ' + toAltitude);
 
 }
 
 public function StopPullUp() {
 
     forcePullUp = 0.0;
-    print('stop pull up');
 
 }

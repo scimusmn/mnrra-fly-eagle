@@ -6,13 +6,14 @@ var sounds : AudioClip[];
 private var audioSource : AudioSource;
 private var loopAudioSource : AudioSource;
 
-function Start () {
-
-//	audioSource = gameObject.GetComponents(AudioSource)[1];
-//	loopAudioSource = gameObject.GetComponents(AudioSource)[1];
+function Awake () {
 
 	audioSource = gameObject.AddComponent (AudioSource);
 	loopAudioSource = gameObject.AddComponent (AudioSource);
+
+}
+
+function Start () {
 
 	if (!audioSource) {
 		Debug.LogError('Did not find AudioSource for SoundManager');
@@ -40,6 +41,10 @@ function play(id:int):void {
 
 function startLoop(id:int):void{
 
+	if (!sounds[id]){
+		print('sound ' + id + 'wasnt loaded');
+	 	return;
+	}
 	loopAudioSource.clip = sounds[id];
 	loopAudioSource.volume = 0.25;
 	loopAudioSource.Play();
@@ -51,3 +56,4 @@ function setLoopVolume(vol:float) :void{
 	loopAudioSource.volume = vol;
 
 }
+
