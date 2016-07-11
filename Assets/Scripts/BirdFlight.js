@@ -33,6 +33,7 @@ private var prevFlapState : float;
 private var hasFlapped : boolean = false;
 
 private var forcePullUp : float = 0.0;
+var allTerrains:Terrain[];
 
 private var soundManager:SoundManager;
 
@@ -44,6 +45,8 @@ function Start () {
 
 	leftWing = transform.Find("LeftWingParent");
 	rightWing = transform.Find("RightWingParent");
+
+	allTerrains = Terrain.activeTerrains;
 
 	soundManager = FindObjectOfType(SoundManager);
 	soundManager.startLoop(1);
@@ -137,14 +140,7 @@ function Update () {
 
 function LateUpdate () {
 
-	// TODO - first, get whichever terrain is below eagle.
-	// Currently only is working on one terrain
-
-	// Stay above terrain.
-	var curTerrainHeight : float = Terrain.activeTerrain.SampleHeight(transform.position);
-	if (transform.position.y < curTerrainHeight) {
-		transform.position.y = curTerrainHeight;
-	}
+	keepAboveTerrain();
 
 }
 
@@ -294,5 +290,41 @@ public function ForcePullUp(toAltitude : float) {
 public function StopPullUp() {
 
     forcePullUp = 0.0;
+
+}
+
+private function keepAboveTerrain():boolean{
+
+	var eaglePos : Vector2 = Vector2(transform.position.x, transform.position.z);
+
+	var terrain:Terrain;
+	var tPos:Vector3;
+	var tSize:Vector3;
+	var tRect:Rect;
+
+	// Find terrain under eagle
+	for(var i:int = 0; i < allTerrains.length; i++) {
+
+		terrain = allTerrains[i];
+		tPos = terrain.GetPosition();
+		tSize = terrain.terrainData.size;
+        tRect = Rect (tPos.x, tPos.z, tSize.x, tSize.z);
+
+        if (tRect.Contains(eaglePos) == true) {
+
+	        // If below terrain, snap to terrain height
+			var curTerrainHeight : float = terrain.SampleHeight(transform.position);
+			if (transform.position.y < curTerrainHeight) {
+				transform.position.y = curTerrainHeight;
+			}
+
+			// Exit
+			return true;
+
+        }
+    }
+
+    // No terrain was found.
+    return false;
 
 }
