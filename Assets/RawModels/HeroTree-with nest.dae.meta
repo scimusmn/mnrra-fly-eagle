@@ -16,6 +16,9 @@ ModelImporter:
     100016: Icosphere_006
     100018: Icosphere_007
     100020: Lamp
+    100022: Icosphere_009
+    100024: Icosphere_014
+    100026: nest
     400000: Cylinder
     400002: //RootNode
     400004: Icosphere
@@ -27,6 +30,9 @@ ModelImporter:
     400016: Icosphere_006
     400018: Icosphere_007
     400020: Lamp
+    400022: Icosphere_009
+    400024: Icosphere_014
+    400026: nest
     2300000: Cylinder
     2300002: Icosphere
     2300004: Icosphere_001
@@ -36,6 +42,9 @@ ModelImporter:
     2300012: Icosphere_005
     2300014: Icosphere_006
     2300016: Icosphere_007
+    2300018: Icosphere_009
+    2300020: Icosphere_014
+    2300022: nest
     3300000: Cylinder
     3300002: Icosphere
     3300004: Icosphere_001
@@ -45,6 +54,9 @@ ModelImporter:
     3300012: Icosphere_005
     3300014: Icosphere_006
     3300016: Icosphere_007
+    3300018: Icosphere_009
+    3300020: Icosphere_014
+    3300022: nest
     4300000: Icosphere_007
     4300002: Cylinder
     4300004: Icosphere
@@ -54,6 +66,9 @@ ModelImporter:
     4300012: Icosphere_004
     4300014: Icosphere_005
     4300016: Icosphere_006
+    4300018: nest
+    4300020: Icosphere_009
+    4300022: Icosphere_014
     9500000: //RootNode
   materials:
     importMaterials: 1

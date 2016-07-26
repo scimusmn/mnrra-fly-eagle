@@ -387,6 +387,25 @@ ModelImporter:
     100758: TallPylon 8
     100760: VerticalCrossSupport
     100762: VerticalCrossSupport 1
+    100764: group_12 1
+    100766: group_13 1
+    100768: group_3 1
+    100770: group_4 1
+    100772: ID194
+    100774: ID247
+    100776: ID282
+    100778: ID314
+    100780: ID318
+    100782: instance_53 1
+    100784: instance_54 1
+    100786: instance_55 1
+    100788: instance_56 1
+    100790: instance_57 1
+    100792: instance_58 1
+    100794: instance_59 1
+    100796: instance_60 1
+    100798: instance_61 1
+    100800: instance_62 1
     400000: group_0
     400002: group_1
     400004: group_10
@@ -769,6 +788,25 @@ ModelImporter:
     400758: TallPylon 8
     400760: VerticalCrossSupport
     400762: VerticalCrossSupport 1
+    400764: group_12 1
+    400766: group_13 1
+    400768: group_3 1
+    400770: group_4 1
+    400772: ID194
+    400774: ID247
+    400776: ID282
+    400778: ID314
+    400780: ID318
+    400782: instance_53 1
+    400784: instance_54 1
+    400786: instance_55 1
+    400788: instance_56 1
+    400790: instance_57 1
+    400792: instance_58 1
+    400794: instance_59 1
+    400796: instance_60 1
+    400798: instance_61 1
+    400800: instance_62 1
     2300000: group_0
     2300002: group_1
     2300004: Group_13
@@ -956,6 +994,17 @@ ModelImporter:
     2300368: TallPylon 6
     2300370: TallPylon 7
     2300372: TallPylon 8
+    2300374: group_12
+    2300376: group_12 1
+    2300378: group_13
+    2300380: group_13 1
+    2300382: group_16
+    2300384: group_17
+    2300386: group_4
+    2300388: group_4 1
+    2300390: group_5
+    2300392: group_5 1
+    2300394: //RootNode
     3300000: group_0
     3300002: group_1
     3300004: Group_13
@@ -1143,6 +1192,17 @@ ModelImporter:
     3300368: TallPylon 6
     3300370: TallPylon 7
     3300372: TallPylon 8
+    3300374: group_12
+    3300376: group_12 1
+    3300378: group_13
+    3300380: group_13 1
+    3300382: group_16
+    3300384: group_17
+    3300386: group_4
+    3300388: group_4 1
+    3300390: group_5
+    3300392: group_5 1
+    3300394: //RootNode
     4300000: group_0
     4300002: group_1
     4300004: ShortBeams
@@ -1163,6 +1223,13 @@ ModelImporter:
     4300034: group_19
     4300036: group_22
     4300038: ShortBeams
+    4300040: SketchUp
+    4300042: group_4
+    4300044: group_5
+    4300046: group_12
+    4300048: group_13
+    4300050: group_16
+    4300052: group_17
     9500000: //RootNode
   materials:
     importMaterials: 1
