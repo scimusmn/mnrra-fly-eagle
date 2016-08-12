@@ -62,6 +62,9 @@ function MoveAndPause() {
 			hasLooped = false;
 		}
 
+		// Point in movement direction
+		transform.LookAt(targetPosition);
+
 		while (transform.position != targetPosition) {
 			transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * moveSpeed);
 			yield;
