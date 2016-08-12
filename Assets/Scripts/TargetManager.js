@@ -29,8 +29,8 @@ function Start () {
 	fishUnderEagle = GameObject.Find(Constants.GO_EAGLE_NAME).Find('fish');
 	fishUnderEagle.active = false;
 
-	//Temp- Add first target
-	//Invoke('AddTarget', 7);
+	// Add first fish target after 30 secs
+	Invoke('AddFishTarget', 30);
 
 }
 
@@ -48,7 +48,8 @@ function Update () {
 
 }
 
-public function AddTarget() {
+public function AddFishTarget() {
+	print('AddFishTarget');
 	AddTarget('fish');
 }
 
@@ -123,8 +124,8 @@ public function AcquireTarget(objToRemove:GameObject) {
 
 			fishUnderEagle.active = false;
 
-			// Spawn new fish to hunt
-			AddTarget('fish');
+			// Spawn new fish after 30 sec delay
+			Invoke('AddFishTarget', 30);
 
 		}
 
