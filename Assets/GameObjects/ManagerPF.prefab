@@ -57,6 +57,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8256c0605d4a54e1c885c60bb9ab3291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 26cb7e7a09354457bbf9ed6b20cdd00e, type: 3}
+  - {fileID: 8300000, guid: 0f33fc15a5cac4370830fac3f5f6bd13, type: 3}
 --- !u!114 &11492914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40e1f01a734cf74da01af624c2fb725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableDebug: 1
+  enableDebug: 0
   VirtualRealitySupported: 0
   VR_cameraDistance: 5
   VR_radius: 1.8
@@ -84,7 +87,7 @@ MonoBehaviour:
     offScreenSprite: {fileID: 21300000, guid: c94b23e59bd617e43ae03cc154ec0cb0, type: 3}
     offScreenColor: {r: 0.9568628, g: 0.3647059, b: 0.26666668, a: 1}
     offScreenRotates: 1
-    targetOffset: {x: 0, y: 55, z: 0}
+    targetOffset: {x: 2, y: 55, z: 3}
     transition: 0
     transitionDuration: 0
   - onScreenSprite: {fileID: 21300000, guid: 4ecf520a92b72407a836ef41c1b08900, type: 3}

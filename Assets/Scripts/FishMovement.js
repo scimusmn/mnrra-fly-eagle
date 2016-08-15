@@ -2,7 +2,6 @@
 import System.Collections.Generic;
 
  var pauseTime : float = 1.0;
- var moveAmount = 3.0;
  var moveSpeed = 1.5;
 
 private var targetPosition : Vector3;
@@ -27,8 +26,6 @@ private var points = new List.<Vector3>();
 
 	// Start movement
      MoveAndPause();
-
-     // Listen on sphere collider for trigger
 
 
  }
@@ -59,26 +56,25 @@ private var points = new List.<Vector3>();
 
          // Face fish towards new target
          transform.LookAt(targetPosition);
-         
-         while (transform.position != targetPosition) {
+
+         while (Vector3.Distance(transform.position, targetPosition) > moveSpeed * 2) {
              transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * moveSpeed);
              yield;
          }
 
      	yield WaitForSeconds(pauseTime);
-     
+
      }
 
  }
 
  function NextTargetPosition():Vector3 {
-
 	points.Sort(function(c1:Vector3, c2:Vector3){
 		return Vector3.Distance(this.transform.position, c1).CompareTo((Vector3.Distance(this.transform.position, c2)));   
 	});
-
+		
  	// Choose one of the closest nodes. (the closest is the one it is on)
- 	var rIndex:int = Random.Range(1, 2);
+ 	var rIndex:int = Random.Range(1, 3);
  	return points[rIndex];
 
  }
