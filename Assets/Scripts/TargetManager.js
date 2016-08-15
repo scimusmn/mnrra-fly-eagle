@@ -13,6 +13,8 @@ private var fishNodes :GameObject[];
 private var fishUnderEagle :GameObject;
 public var splashPrefab: GameObject;
 
+private var uiAlerts : TextAlerts;
+
 function Start () {
 
 	if (!nestPrefab) {
@@ -22,6 +24,8 @@ function Start () {
 	if (!offScreenIndicator) {
 		Debug.LogError('TargetGenerator.js: Set offScreenIndicator', offScreenIndicator);
 	}
+
+	uiAlerts = GameObject.Find('TextAlerts').GetComponent('TextAlerts');
 
 	// Fina all starting points for fish
 	fishNodes = GameObject.FindGameObjectsWithTag('FishNode');
@@ -104,7 +108,8 @@ public function AcquireTarget(objToRemove:GameObject) {
 
 		// TODO: Show catch animation.
 
-		// TODO: Should we force them to pull up at this point?
+		// Show alert text
+		uiAlerts.Show('Text-YouCaughtaFishMesh', 6);
 
 		// Show fish under eagle
 		fishUnderEagle.active = true;
@@ -123,6 +128,9 @@ public function AcquireTarget(objToRemove:GameObject) {
 		if (fishUnderEagle.active == true) {
 
 			fishUnderEagle.active = false;
+
+			// Show alert
+			uiAlerts.Show('Text-YourChicksWillLoveFishMesh', 6);
 
 			// Spawn new fish after 30 sec delay
 			Invoke('AddFishTarget', 30);

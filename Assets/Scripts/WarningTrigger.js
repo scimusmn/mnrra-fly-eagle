@@ -1,25 +1,22 @@
 ﻿#pragma strict
 import UnityEngine.UI;
 
-public var warningMsg : String = 'Adjust course to stay near river.';
+
 
 @Header ("Rotate forward direction towards safe zone (blue arrow)")
 
-private var uiWarning : GameObject;
-private var uiWarningText : Text;
+public var alertId : String = 'Text-stayNearRiverMesh';
+private var uiAlerts : TextAlerts;
 
 private var isShowing = false;
 
 function Awake () {
 
-	uiWarning = GameObject.Find('UI-Warning');
-	uiWarningText = uiWarning.GetComponentInChildren(Text);
-
 }
 
 function Start () {
 
-	showWarning(false);
+	uiAlerts = GameObject.Find('TextAlerts').GetComponent('TextAlerts');
 
 }
 
@@ -73,11 +70,10 @@ function OnTriggerExit(other:Collider) {
 function showWarning(doShow:boolean) {
 
 	if (doShow == true) {
-		uiWarningText.text = warningMsg;
-		uiWarning.SetActive(true);
+		uiAlerts.Show(alertId);
 		isShowing = true;
 	} else {
-		uiWarning.SetActive(false);
+		uiAlerts.Hide(alertId);
 		isShowing = false;
 	}
 
