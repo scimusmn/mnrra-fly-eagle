@@ -49,7 +49,8 @@ function Start () {
 	allTerrains = Terrain.activeTerrains;
 
 	soundManager = FindObjectOfType(SoundManager);
-	soundManager.startLoop(1);
+	soundManager.startLoop(1, 1); // Wind
+	soundManager.startLoop(2, 2); // Water
 
 }
 
@@ -131,10 +132,17 @@ function Update () {
 	        altitudeBoost = 1.5;
 	    }
 
-	    // Update wind volume
-	    soundManager.setLoopVolume(Utils.Map(speedBoost, 0, 1, 0.1, 0.5));
-
 	}
+
+	// Update wind and water volumes based on altitude
+
+	// Wind volume
+	var altitudeVol:float = Utils.Map(transform.position.y, 0, 700, 0.0, 1);
+	soundManager.setLoopVolume(1, altitudeVol);
+
+	// River volume
+	var waterVol: float = Utils.Map(transform.position.y, 0, 75, 0.7, 0.0);
+	soundManager.setLoopVolume(2, waterVol);
 
 }
 

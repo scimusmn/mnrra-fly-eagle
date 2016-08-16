@@ -14,6 +14,7 @@ private var fishUnderEagle :GameObject;
 public var splashPrefab: GameObject;
 
 private var uiAlerts : TextAlerts;
+private var soundManager:SoundManager;
 
 function Start () {
 
@@ -26,6 +27,7 @@ function Start () {
 	}
 
 	uiAlerts = GameObject.Find('TextAlerts').GetComponent('TextAlerts');
+	soundManager = FindObjectOfType(SoundManager);
 
 	// Fina all starting points for fish
 	fishNodes = GameObject.FindGameObjectsWithTag('FishNode');
@@ -106,7 +108,8 @@ public function AcquireTarget(objToRemove:GameObject) {
 		// Remove Fish from water
 		Destroy(objToRemove);
 
-		// TODO: Show catch animation.
+		// Play splash sound
+		soundManager.play(3);
 
 		// Show alert text
 		uiAlerts.Show('Text-YouCaughtaFishMesh', 6);

@@ -58,8 +58,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - {fileID: 8300000, guid: 26cb7e7a09354457bbf9ed6b20cdd00e, type: 3}
-  - {fileID: 8300000, guid: 0f33fc15a5cac4370830fac3f5f6bd13, type: 3}
+  - {fileID: 8300000, guid: adf39276ca8dc468b95a352376f67643, type: 3}
+  - {fileID: 8300000, guid: 878c5004105ea4d69b3ebdcfc10ef572, type: 3}
+  - {fileID: 8300000, guid: ae937dadf1ac64fd6ba0cb20e78dc7e1, type: 3}
+  - {fileID: 8300000, guid: 4734957d07653415e92aa187a3b392fc, type: 3}
 --- !u!114 &11492914
 MonoBehaviour:
   m_ObjectHideFlags: 1
