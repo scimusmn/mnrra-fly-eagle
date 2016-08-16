@@ -132,6 +132,9 @@ public function AcquireTarget(objToRemove:GameObject) {
 
 			fishUnderEagle.active = false;
 
+			// Play eaglse sound
+			soundManager.play(4);
+
 			// Show alert
 			uiAlerts.Show('Text-YourChicksWillLoveFishMesh', 6);
 

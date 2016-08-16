@@ -141,7 +141,7 @@ function Update () {
 	soundManager.setLoopVolume(1, altitudeVol);
 
 	// River volume
-	var waterVol: float = Utils.Map(transform.position.y, 0, 75, 0.7, 0.0);
+	var waterVol: float = Utils.Map(transform.position.y, 0, 65, 0.7, 0.0);
 	soundManager.setLoopVolume(2, waterVol);
 
 }
