@@ -3,7 +3,7 @@ import System;
 import System.IO;
 import UnityEngine.SceneManagement;
  
-var filePath = "Assets/Scripts/SavedFlight.txt";
+var filePath = "Assets/Scripts/SavedFlights/SavedFlight_0.txt";
 var recordFlight = false;
 
 private var recordedInputData: List.<String> = new List.<String>();
@@ -135,7 +135,7 @@ function ReadFile() {
         var sr = File.OpenText(filePath);
         var line = sr.ReadLine();
 
-        print('~~FILE READ');
+        print('FlightSaver: File read.');
 
         while(line != null) {
 //            Debug.Log(line); // prints each line of the file
@@ -159,8 +159,6 @@ function ReadFile() {
             line = sr.ReadLine();
 
         }  
-
-        print('~~ALL LINES READ');
 
     } else {
 

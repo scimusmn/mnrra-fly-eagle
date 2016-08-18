@@ -52,10 +52,6 @@ function Start () {
 
 function Update () {
 
-	//TEMP
-	birdFlight.aiUpdate();
-	return;
-
     if(kinectInput == false || Input.GetMouseButton(0)) {
 
         // Get normalized mouse position between -1f and 1f.
@@ -97,7 +93,11 @@ function kinectUpdate() {
 
     } else {
 
-        birdFlight.noInputUpdate();
+		if (screensaverMode == true){
+			birdFlight.aiUpdate();
+		} else {
+			birdFlight.noInputUpdate();
+		}
         return;
 
     }
@@ -177,7 +177,7 @@ function kinectUpdate() {
 
 function CheckForScreensaverMode() {
 
-	yield WaitForSeconds(3);
+	yield WaitForSeconds(1);
 
 	var manager = KinectManager.Instance;
 
@@ -193,6 +193,7 @@ function CheckForScreensaverMode() {
     } else {
 
         print('Warning: Kinect not active.');
+//        toggleScreensaverMode(true);
 
     }
 
@@ -202,12 +203,12 @@ function tPoseTick() {
 
 	if (screensaverMode == true) {
 
-		print("Performing T-Pose during screensaver");
+		print('Performing T-Pose during screensaver');
 		tPoseCount ++;
 
 		if (tPoseCount > tPoseThreshold) {
 
-			print("Valid user recognized. Aborting screensaver.");
+			print('Valid user recognized. Aborting screensaver.');
 			toggleScreensaverMode(false);
 
 		}
@@ -218,7 +219,7 @@ function tPoseTick() {
 
 function tPoseReset() {
 	if (screensaverMode == true && tPoseCount != 0) {
-		print("Cancel TPose during screensaver");
+//		print("Cancel TPose during screensaver");
 		tPoseCount = 0;
 	}
 
@@ -229,7 +230,7 @@ function toggleScreensaverMode(active:boolean){
 	if (active == true && screensaverMode == false) {
 		// ENTER screensaver mode
 		// from here out bird will update with AI
-		print('SCREENSAVER MODE ENABLED');
+		print('Screensaver mode enabled.');
 
 	} else if (active == false && screensaverMode == true) {
 		// EXIT screensaver mode
