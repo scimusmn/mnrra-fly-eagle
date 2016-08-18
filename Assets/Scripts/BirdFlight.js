@@ -36,6 +36,13 @@ private var forcePullUp : float = 0.0;
 var allTerrains:Terrain[];
 
 private var soundManager:SoundManager;
+private var flightSaver:FlightSaver;
+
+function Awake () {
+
+	flightSaver = GameObject.Find('ManagerPF').GetComponent('FlightSaver');
+
+}
 
 function Start () {
 
@@ -103,7 +110,7 @@ function Update () {
 	if (speedBoost > 0.0 || dampSpeedBoost > 0.001) {
 
         // Smooth speed increase
-	    dampSpeedBoost = Mathf.Lerp(dampSpeedBoost, speedBoost, 0.075);
+	    dampSpeedBoost = Mathf.Lerp(dampSpeedBoost, speedBoost, 0.1);
 
 	    // Smooth altitude increase (decays faster)
 	    dampAltitudeBoost = Mathf.Lerp(dampAltitudeBoost, altitudeBoost, 0.6);
@@ -115,12 +122,12 @@ function Update () {
 	    followCam.boostFollowDistance = dampSpeedBoost * 0.75;
 
         // Reduce the boost speed over time.
-	    speedBoost -= 0.001;
+	    speedBoost -= 0.0035;
 	    if (speedBoost < 0.0) {
 	        speedBoost = 0.0;
-	    } else if (speedBoost > 1.0) {
+	    } else if (speedBoost > 2.5) {
 	        // Ceiling
-	        speedBoost = 1.0;
+	        speedBoost = 2.5;
 	    }
 
 	    // Reduce the boost altitude over time. (decays faster)
@@ -141,7 +148,7 @@ function Update () {
 	soundManager.setLoopVolume(1, altitudeVol);
 
 	// River volume
-	var waterVol: float = Utils.Map(transform.position.y, 0, 65, 0.7, 0.0);
+	var waterVol: float = Utils.Map(transform.position.y, 0, 100, 1.0, 0.0);
 	soundManager.setLoopVolume(2, waterVol);
 
 }
@@ -156,16 +163,16 @@ public function Flap() {
 
 	// Make first flap most powerful
 	if (speedBoost == 0.0) {
-		speedBoost += 0.4f;
+		speedBoost += 0.5f;
 		altitudeBoost += 0.025f;
 	} else {
-		speedBoost += 0.15f;
+		speedBoost += 0.25f;
 		altitudeBoost += 0.025f;
-		altitudeBoost *= 1.25f; // Altitude momentum
+		altitudeBoost *= 1.1f; // Altitude momentum
 	}
 
 	// Play flap sound effect
-	soundManager.play(0);
+	soundManager.play(0, Random.Range(0.15, 0.3));
 
 }
 
@@ -177,16 +184,26 @@ public function Flap() {
  */
 public function UpdateInputs(wingsRoll : float, wingsYaw : float, wingsPitch : float) {
 
-  wingSpanAngle = wingsRoll;
-  wingSpanYaw = wingsYaw;
-  wingSpanPitch = wingsPitch;
+	// Record inputs for later playback
+	if (flightSaver.recordFlight == true){
+		flightSaver.recordInputData(wingsRoll, wingsYaw, wingsPitch);
+	}
 
-  // Map angle to object rotation
-  targetRollRotation = Quaternion.Euler (0, 0, Utils.Map(wingSpanAngle, -1, 1, -maxRotation, maxRotation));
+	wingSpanAngle = wingsRoll;
+	wingSpanYaw = wingsYaw;
+	wingSpanPitch = wingsPitch;
+
+	// Map angle to object rotation
+	targetRollRotation = Quaternion.Euler (0, 0, Utils.Map(wingSpanAngle, -1, 1, -maxRotation, maxRotation));
 
 }
 
 public function UpdateFlapState(wingLeftAngle:float, wingRightAngle:float) {
+
+	// Record inputs for playback
+	if (flightSaver.recordFlight == true){
+		flightSaver.recordFlapData(wingLeftAngle, wingRightAngle);
+	}
 
     // Average both wing angles (birds never flap one wing)
     var avgAngle = (wingLeftAngle + (-1 * wingRightAngle)) / 2;
@@ -196,14 +213,14 @@ public function UpdateFlapState(wingLeftAngle:float, wingRightAngle:float) {
 
     if(avgAngle < -5.0){
     	// shift wing up
-    	leftWing.transform.localPosition.y = 2.0 + Utils.Map(avgAngle, -55, -5.0, 0.15, 0.0);
-    	rightWing.transform.localPosition.y = 2.0 + Utils.Map(avgAngle, -55, -5.0, 0.15, 0.0);
+    	leftWing.transform.localPosition.y = 1.96 + Utils.Map(avgAngle, -55, -5.0, 0.15, 0.0);
+    	rightWing.transform.localPosition.y = 1.96 + Utils.Map(avgAngle, -55, -5.0, 0.15, 0.0);
     	// shift wing in
-    	leftWing.transform.localPosition.x = -0.5 + Utils.Map(avgAngle, -55, -5.0, 0.25, 0.0);
-    	rightWing.transform.localPosition.x = 0.5 - Utils.Map(avgAngle, -55, -5.0, 0.25, 0.0);
+    	leftWing.transform.localPosition.x = -0.5 + Utils.Map(avgAngle, -55, -5.0, 0.3, 0.0);
+    	rightWing.transform.localPosition.x = 0.5 - Utils.Map(avgAngle, -55, -5.0, 0.3, 0.0);
     }else{
-    	leftWing.transform.localPosition.y = 2.0;
-    	rightWing.transform.localPosition.y = 2.0;
+    	leftWing.transform.localPosition.y = 1.96;
+    	rightWing.transform.localPosition.y = 1.96;
     	leftWing.transform.localPosition.x = -0.5;
     	rightWing.transform.localPosition.x = 0.5;
     }
@@ -286,6 +303,35 @@ public function noInputUpdate() {
 
     this.UpdateInputs( lerpedInputs.x, lerpedInputs.y, lerpedInputs.z );
     this.UpdateFlapState( lerpedFlap, -lerpedFlap );
+
+}
+
+// This flys the eagle around,
+// occassionally dipping. 
+// Only meant for a screensaver mode.
+public function aiUpdate() {
+
+    // The eagle will fly itself
+    // Temp: lerp towards a friggin barrel roll 
+//    var ppPitch:float = Mathf.PingPong(Time.time * 0.3, 2.0) - 1.0f;
+//    var ppAngle:float = Mathf.PingPong(Time.time * 0.2, 2.0) - 1.0f;
+//
+//    var curInputs : Vector3 = Vector3(wingSpanAngle, wingSpanYaw, wingSpanPitch);
+//    var lerpedInputs = Vector3.Lerp(curInputs, Vector3(ppAngle, wingSpanYaw, ppPitch), 0.01);
+//
+//    var ppFlap:float = Mathf.PingPong(Time.time * 10, 30.0f) - 20.0f;
+//    var lerpedFlap : float = Mathf.Lerp(prevFlapState, ppFlap, 0.1);
+//
+//    this.UpdateInputs( lerpedInputs.x, lerpedInputs.y, lerpedInputs.z );
+//    this.UpdateFlapState( lerpedFlap, -lerpedFlap );
+
+
+
+	var inputState:Vector3 = flightSaver.getNextInputData();
+	var flapState:Vector2 = flightSaver.getNextFlapData();
+
+	this.UpdateInputs( inputState.x, inputState.y, inputState.z );
+    this.UpdateFlapState( flapState.x, flapState.y );
 
 }
 

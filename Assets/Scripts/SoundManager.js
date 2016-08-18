@@ -39,8 +39,13 @@ function Start () {
 
 function play(id:int):void {
 	
-	audioSource.volume = Random.Range(0.7, 1.0);
-	print('id'+id);
+	play(id, 1.0);
+
+}
+
+function play(id:int, vol:float):void {
+	
+	audioSource.volume = vol;
 	audioSource.GetComponent.<AudioSource>().PlayOneShot(sounds[id]);
 
 }

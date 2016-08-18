@@ -1,5 +1,7 @@
 ﻿#pragma strict
 
+import UnityEngine.SceneManagement;
+
 public var targetObj : GameObject;
 private var birdFlight : BirdFlight;
 public var kinectInput: boolean = false;
@@ -26,7 +28,10 @@ private var posShoulderRight: Vector3;
 private var posHead: Vector3;
 private var posHipCenter: Vector3;
 
-private enum Gesture{TPose, Pencil};
+private var sceneFader:SceneFader;
+private var screensaverMode:boolean = false;
+private var tPoseCount:int = 0;
+private var tPoseThreshold:int = 300; // (60fps*5) frames t-pose must be held to abort screensaver
 
 // Mouse control variables
 private var mouseScrollWingAngle: float = 0.0;
@@ -46,6 +51,10 @@ function Start () {
 }
 
 function Update () {
+
+	//TEMP
+	birdFlight.aiUpdate();
+	return;
 
     if(kinectInput == false || Input.GetMouseButton(0)) {
 
@@ -106,14 +115,6 @@ function kinectUpdate() {
         posHead = manager.GetJointPosition(userId, iHead);
         posHipCenter = manager.GetJointPosition(userId, iHipCenter);
 
-        // Is user facing camera? 
-        // (Check by ensuring wrists/shoulders are on expected sides)
-        if (posWristRight.x - posWristLeft.x < 0.2 || 
-            posShoulderRight.x - posShoulderLeft.x < 0.1) {
-            birdFlight.noInputUpdate();
-            return;
-        }
-
         // Get angle between left and right wrists
         var vectorWrists : Vector3 = posWristRight - posWristLeft;
 
@@ -134,20 +135,39 @@ function kinectUpdate() {
         // Normalize degrees to -1 ~ 1 range.
         var normRoll :float = Utils.Map(rollAngle, -60, 60, 1.0, -1.0);
         var normYaw :float = Utils.Map(yawAngle, -70, 70, -1.0, 1.0);
-        var normPitch :float = Utils.Map(pitchAngle, 48, 100, 1.0, -1.0);
+        var normPitch :float = Utils.Map(pitchAngle, 63, 103, 1.0, -1.0);
 
-        // Send update to bird controller
-        birdFlight.UpdateInputs( normRoll, normYaw, normPitch );
-        birdFlight.UpdateFlapState(wingLeftAngle, wingRightAngle);
+        if (screensaverMode == false) {
 
-        // Detect "TPose"
-        if (wingRightAngle > -15 && wingRightAngle < 15 &&
-        	wingLeftAngle > -15 && wingLeftAngle < 15 ) {
-        	GestureUpdate(Gesture.TPose);
+        	// Is user facing camera? 
+	        // (Check by ensuring wrists/shoulders are on expected sides)
+	        if (posWristRight.x - posWristLeft.x < 0.2 || 
+	            posShoulderRight.x - posShoulderLeft.x < 0.1) {
+	            birdFlight.noInputUpdate();
+	            return;
+	        }
+
+			// Send update to bird controller
+	        birdFlight.UpdateInputs( normRoll, normYaw, normPitch );
+	        birdFlight.UpdateFlapState(wingLeftAngle, wingRightAngle);
+
+        } else {
+        	
+			// During screensaver, we silently watch for a held t-pose
+	        if (wingRightAngle > -15 && wingRightAngle < 15 &&
+	        	wingLeftAngle > -15 && wingLeftAngle < 15 ) {
+	        	tPoseTick();
+	        } else {
+	        	tPoseReset();
+	        }
+
+	        birdFlight.aiUpdate();
+
         }
 
     } else {
 
+		tPoseReset();
         birdFlight.noInputUpdate();
         return;
 
@@ -165,16 +185,59 @@ function CheckForScreensaverMode() {
         var userId = manager.GetPrimaryUserID();
         if (!userId || userId <= 0) {
             // No players available...
-            print('No user active. Start screensaver mode');
+            print('Kinect active but No user active. Start screensaver mode');
+            toggleScreensaverMode(true);
             return;
         }
+
+    } else {
+
+        print('Warning: Kinect not active.');
 
     }
 
 }	
 
-function GestureUpdate(gesture:Gesture) {
-	if (gesture == Gesture.TPose) {
-		print("Performing TPose");
+function tPoseTick() {
+
+	if (screensaverMode == true) {
+
+		print("Performing T-Pose during screensaver");
+		tPoseCount ++;
+
+		if (tPoseCount > tPoseThreshold) {
+
+			print("Valid user recognized. Aborting screensaver.");
+			toggleScreensaverMode(false);
+
+		}
+
 	}
+
+}
+
+function tPoseReset() {
+	if (screensaverMode == true && tPoseCount != 0) {
+		print("Cancel TPose during screensaver");
+		tPoseCount = 0;
+	}
+
+}
+
+function toggleScreensaverMode(active:boolean){
+
+	if (active == true && screensaverMode == false) {
+		// ENTER screensaver mode
+		// from here out bird will update with AI
+		print('SCREENSAVER MODE ENABLED');
+
+	} else if (active == false && screensaverMode == true) {
+		// EXIT screensaver mode
+		// Simply restart scene now that user is ready.
+		var currentSceneName = SceneManager.GetActiveScene().name;
+		sceneFader.EndScene(currentSceneName);
+	}
+
+	screensaverMode = active;
+
 }
