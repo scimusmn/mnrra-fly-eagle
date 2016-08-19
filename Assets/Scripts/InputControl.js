@@ -31,10 +31,14 @@ private var posHipCenter: Vector3;
 private var sceneFader:SceneFader;
 private var screensaverMode:boolean = false;
 private var tPoseCount:int = 0;
-private var tPoseThreshold:int = 300; // (60fps*5) frames t-pose must be held to abort screensaver
+private var tPoseThreshold:int = 150; // (60fps*2.5) frames t-pose must be held to abort screensaver
 
 // Mouse control variables
 private var mouseScrollWingAngle: float = 0.0;
+
+function Awake() {
+	sceneFader = FindObjectOfType(SceneFader);
+}
 
 function Start () {
 
@@ -211,7 +215,7 @@ function tPoseTick() {
 
 	if (screensaverMode == true) {
 
-		print('Performing T-Pose during screensaver');
+		print('Performing T-Pose during screensaver: ' + tPoseCount + ' / ' + tPoseThreshold);
 		tPoseCount ++;
 
 		if (tPoseCount > tPoseThreshold) {
@@ -243,6 +247,7 @@ function toggleScreensaverMode(active:boolean){
 	} else if (active == false && screensaverMode == true) {
 		// EXIT screensaver mode
 		// Simply restart scene now that user is ready.
+		print('EXIT Screensaver mode.');
 		var currentSceneName = SceneManager.GetActiveScene().name;
 		sceneFader.EndScene(currentSceneName);
 	}
