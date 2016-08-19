@@ -177,7 +177,7 @@ function kinectUpdate() {
 
 function CheckForScreensaverMode() {
 
-	yield WaitForSeconds(1);
+	yield WaitForSeconds(0.25);
 
 	var manager = KinectManager.Instance;
 
@@ -193,7 +193,8 @@ function CheckForScreensaverMode() {
     } else {
 
         print('Warning: Kinect not active.');
-//        toggleScreensaverMode(true);
+        // Uncomment to test screensaver mode wo kinect
+        toggleScreensaverMode(true);
 
     }
 

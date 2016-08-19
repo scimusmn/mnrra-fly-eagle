@@ -311,22 +311,6 @@ public function noInputUpdate() {
 // Only meant for a screensaver mode.
 public function aiUpdate() {
 
-    // The eagle will fly itself
-    // Temp: lerp towards a friggin barrel roll 
-//    var ppPitch:float = Mathf.PingPong(Time.time * 0.3, 2.0) - 1.0f;
-//    var ppAngle:float = Mathf.PingPong(Time.time * 0.2, 2.0) - 1.0f;
-//
-//    var curInputs : Vector3 = Vector3(wingSpanAngle, wingSpanYaw, wingSpanPitch);
-//    var lerpedInputs = Vector3.Lerp(curInputs, Vector3(ppAngle, wingSpanYaw, ppPitch), 0.01);
-//
-//    var ppFlap:float = Mathf.PingPong(Time.time * 10, 30.0f) - 20.0f;
-//    var lerpedFlap : float = Mathf.Lerp(prevFlapState, ppFlap, 0.1);
-//
-//    this.UpdateInputs( lerpedInputs.x, lerpedInputs.y, lerpedInputs.z );
-//    this.UpdateFlapState( lerpedFlap, -lerpedFlap );
-
-
-
 	var inputState:Vector3 = flightSaver.getNextInputData();
 	var flapState:Vector2 = flightSaver.getNextFlapData();
 

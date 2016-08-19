@@ -3,8 +3,9 @@ import System;
 import System.IO;
 import UnityEngine.SceneManagement;
  
-var filePath = "Assets/Scripts/SavedFlights/SavedFlight_0.txt";
+var filePath = "Assets/Resources/SavedFlights/SavedFlight_0.txt";
 var recordFlight = false;
+var savedFlights: List.<TextAsset> = new List.<TextAsset>();
 
 private var recordedInputData: List.<String> = new List.<String>();
 private var recordedFlapData: List.<String> = new List.<String>();
@@ -130,41 +131,36 @@ function WriteFile() {
 }
 
 function ReadFile() {
-   
-    if(File.Exists(filePath)){
-        var sr = File.OpenText(filePath);
-        var line = sr.ReadLine();
 
-        print('FlightSaver: File read.');
+	
+	var rIndex:int = Mathf.Floor(UnityEngine.Random.Range(0, savedFlights.Count));
+	print('ReadFile ' + rIndex);
+	var txtFile:TextAsset = savedFlights[rIndex];
+	var flightStr:String = txtFile.text;
 
-        while(line != null) {
-//            Debug.Log(line); // prints each line of the file
+	var lines:String[] = Regex.Split ( flightStr, "\n|\r|\r\n" );
 
-            if (line.Contains("INPUT-STATE")) {
+	for ( var i:int=0; i < lines.Length; i++ ) {
 
-            	// Parse input data
-            	var inputs:String[] = line.Split(","[0]);
-				var inputV3:Vector3 = new Vector3( parseFloat(inputs[1]), parseFloat(inputs[2]), parseFloat(inputs[3]) );
-            	loadedInputData.Add(inputV3);
+		var line:String = lines[i];
 
-            } else if (line.Contains("FLAP-STATE")) {
+		if (line.Contains("INPUT-STATE")) {
 
-            	// Parse flap data
-            	var flaps:String[] = line.Split(","[0]);
-            	var flapV2:Vector2 = new Vector2( parseFloat(flaps[1]), parseFloat(flaps[2]) );
-            	loadedFlapData.Add(flapV2);
+        	// Parse input data
+        	var inputs:String[] = line.Split(","[0]);
+			var inputV3:Vector3 = new Vector3( parseFloat(inputs[1]), parseFloat(inputs[2]), parseFloat(inputs[3]) );
+        	loadedInputData.Add(inputV3);
 
-            }
+        } else if (line.Contains("FLAP-STATE")) {
 
-            line = sr.ReadLine();
+        	// Parse flap data
+        	var flaps:String[] = line.Split(","[0]);
+        	var flapV2:Vector2 = new Vector2( parseFloat(flaps[1]), parseFloat(flaps[2]) );
+        	loadedFlapData.Add(flapV2);
 
-        }  
+        }
 
-    } else {
+	}
 
-        Debug.Log("Could not Open the file: " + filePath + " for reading.");
-        return;
-
-    }
 
 }
