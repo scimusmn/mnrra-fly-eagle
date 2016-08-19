@@ -83,16 +83,18 @@ function kinectUpdate() {
 
         if (!userId || userId <= 0) {
             // No players available...
-            // TODO: Reset values. After X seconds,
-            // assume user as exited and reset game.
-            birdFlight.noInputUpdate();
+            if (screensaverMode == true){
+				birdFlight.aiUpdate();
+			} else {
+				birdFlight.noInputUpdate();
+			}
             return;
         }
 
         manager.DetectGesture(userId, KinectGestures.Gestures.Tpose);
 
     } else {
-
+    	// Kinect not available...
 		if (screensaverMode == true){
 			birdFlight.aiUpdate();
 		} else {
@@ -102,6 +104,7 @@ function kinectUpdate() {
 
     }
 
+    // Kinect and User data is available...
     // Are both wrists being tracked?
     if (manager.IsJointTracked(userId, iWristLeft) && manager.IsJointTracked(userId, iWristRight)) {
 
@@ -168,7 +171,11 @@ function kinectUpdate() {
     } else {
 
 		tPoseReset();
-        birdFlight.noInputUpdate();
+        if (screensaverMode == true){
+			birdFlight.aiUpdate();
+		} else {
+			birdFlight.noInputUpdate();
+		}
         return;
 
     }
@@ -177,7 +184,7 @@ function kinectUpdate() {
 
 function CheckForScreensaverMode() {
 
-	yield WaitForSeconds(0.25);
+	yield WaitForSeconds(0.5);
 
 	var manager = KinectManager.Instance;
 
