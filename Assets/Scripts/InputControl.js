@@ -30,6 +30,7 @@ private var posHipCenter: Vector3;
 
 private var sceneFader:SceneFader;
 private var screensaverMode:boolean = false;
+private var screensaverUI:GameObject;
 private var tPoseCount:int = 0;
 private var tPoseThreshold:int = 150; // (60fps*2.5) frames t-pose must be held to abort screensaver
 
@@ -38,6 +39,8 @@ private var mouseScrollWingAngle: float = 0.0;
 
 function Awake() {
 	sceneFader = FindObjectOfType(SceneFader);
+	screensaverUI = GameObject.Find('UI-StartGame');
+	screensaverUI.active = false;
 }
 
 function Start () {
@@ -188,7 +191,7 @@ function kinectUpdate() {
 
 function CheckForScreensaverMode() {
 
-	yield WaitForSeconds(0.5);
+	yield WaitForSeconds(1.0);
 
 	var manager = KinectManager.Instance;
 
@@ -243,6 +246,10 @@ function toggleScreensaverMode(active:boolean){
 		// ENTER screensaver mode
 		// from here out bird will update with AI
 		print('Screensaver mode enabled.');
+
+		// Show screensaver GUI
+		screensaverUI.active = true;
+
 
 	} else if (active == false && screensaverMode == true) {
 		// EXIT screensaver mode
