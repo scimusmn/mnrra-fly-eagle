@@ -5,6 +5,7 @@ import UnityEngine.SceneManagement;
 public var targetObj : GameObject;
 private var birdFlight : BirdFlight;
 public var kinectInput: boolean = false;
+public var hideCursor: boolean = true;
 
 // Collect indices of the joints we're interested in...
 private var iHandLeft:int = parseInt(KinectInterop.JointType.HandLeft);
@@ -54,6 +55,12 @@ function Start () {
     // If not, assume there is no one using, 
     // begin "screensaver" AI flight.
     CheckForScreensaverMode();
+
+    // Show/hide cursor
+    if (hideCursor == true) {
+    	// Hide the cursor
+		Screen.showCursor = false;
+    }
 
 }
 
