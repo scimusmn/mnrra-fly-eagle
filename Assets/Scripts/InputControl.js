@@ -32,7 +32,7 @@ private var sceneFader:SceneFader;
 private var screensaverMode:boolean = false;
 private var screensaverUI:GameObject;
 private var tPoseCount:int = 0;
-private var tPoseThreshold:int = 150; // (60fps*2.5) frames t-pose must be held to abort screensaver
+private var tPoseThreshold:int = 30; // frames t-pose must be held to abort screensaver
 
 // Mouse control variables
 private var mouseScrollWingAngle: float = 0.0;
