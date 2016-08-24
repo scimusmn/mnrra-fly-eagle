@@ -59,7 +59,7 @@ function Start () {
     // Show/hide cursor
     if (hideCursor == true) {
     	// Hide the cursor
-		Screen.showCursor = false;
+		Cursor.visible = false;
     }
 
 }
