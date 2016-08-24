@@ -198,7 +198,7 @@ function kinectUpdate() {
 
 function CheckForScreensaverMode() {
 
-	yield WaitForSeconds(1.0);
+	yield WaitForSeconds(2.0);
 
 	var manager = KinectManager.Instance;
 
