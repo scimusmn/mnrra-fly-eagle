@@ -60,9 +60,9 @@ function StartScene() {
 
 public function EndScene(SceneName:String) {
 
-  	// TN - Attempt to unload resources
-  	Resources.UnloadUnusedAssets();
-  	print('Unloading Unused Assets...');
+	// TN - Attempt to unload resources
+	Resources.UnloadUnusedAssets();
+	print('Unloading Unused Assets...');
 
     // Make sure the RawImage is enabled.
     FadeImg.enabled = true;
