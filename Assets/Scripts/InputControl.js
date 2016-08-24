@@ -263,7 +263,7 @@ function inactivityTick() {
 
 	if (screensaverMode == false) {
 
-		print('inactivity: ' + inactivityCount + ' / ' +inactivityThreshold);
+		//print('inactivity: ' + inactivityCount + ' / ' +inactivityThreshold);
 		inactivityCount ++;
 
 		if (inactivityCount > inactivityThreshold) {
