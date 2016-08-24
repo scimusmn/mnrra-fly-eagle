@@ -32,7 +32,7 @@ private var posHipCenter: Vector3;
 private var sceneFader:SceneFader;
 private var screensaverMode:boolean = false;
 private var ssChecks:int = 0;
-private var ssCheckThresh = 7;
+private var hasSeenUser:boolean = false;
 private var screensaverUI:GameObject;
 private var tPoseCount:int = 0;
 private var tPoseThreshold:int = 30; // frames t-pose must be held to abort screensaver
@@ -60,13 +60,29 @@ function Start () {
     // Once scene starts, check if user is active.
     // If not, assume there is no one using, 
     // begin "screensaver" AI flight.
-    CheckForScreensaverMode();
+    Invoke('CheckForScreensaverMode', 4);
+    Invoke('CheckForScreensaverMode', 6);
+    Invoke('CheckForScreensaverMode', 8);
+    Invoke('CheckForScreensaverMode', 10);
 
     // Show/hide cursor
     if (hideCursor == true) {
     	// Hide the cursor
 		Cursor.visible = false;
+
     }
+
+    if (kinectInput == true && hideCursor == true) {
+
+		// If cursor is invisible
+		// assume in long-term installation mode
+		// if kinect isn't available after 10 secs,
+		// something is wrong, force restart.
+		Invoke('CheckForHardwareAccess', 10);
+
+    }
+
+
 
 }
 
@@ -205,9 +221,25 @@ function kinectUpdate() {
 
 }
 
+function CheckForHardwareAccess() {
+	var manager = KinectManager.Instance;
+	if(manager && manager.IsInitialized()){
+
+	} else {
+		print('ERROR - kinect hardware still not available after 10 secs');
+		var currentSceneName = SceneManager.GetActiveScene().name;
+		sceneFader.EndScene(currentSceneName);
+	}
+
+}
+
 function CheckForScreensaverMode() {
 
-	yield WaitForSeconds(1.0);
+	if (hasSeenUser == true) {
+		return;
+	}
+
+	print('CheckForScreensaverMode');
 
 	var manager = KinectManager.Instance;
 
@@ -216,24 +248,18 @@ function CheckForScreensaverMode() {
         if (!userId || userId <= 0) {
             // No players available...
 
-            print('Kinect active but No user active. Start screensaver mode');
-
             if (screensaverMode == false){
             	toggleScreensaverMode(true);
             }
 
-            if (ssChecks < ssCheckThresh){
-            	ssChecks++;
-            	// check again in X secs
-            	print('No user on ss check:'+ssChecks);
-            	Invoke('CheckForScreensaverMode', 0.5);
-            } else {
-            	print('Done checking for screensaver mode');
-            }
+            // check again in X secs
+            ssChecks++;
+            print('No user on ss check:'+ssChecks);
 
             return;
         } else {
         	print('User found. Disable screensaver mode');
+        	hasSeenUser = true;
         	screensaverUI.active = false;
         	screensaverMode = false;
         }
