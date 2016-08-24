@@ -35,6 +35,10 @@ private var screensaverUI:GameObject;
 private var tPoseCount:int = 0;
 private var tPoseThreshold:int = 30; // frames t-pose must be held to abort screensaver
 
+private var inactivityCount:int = 0;
+private var inactivityThreshold:int = 1800; // (60fps * 30secs) frames before active scene is aborted for screensaver
+private var destroyKinectOnScene:boolean = true;
+
 // Mouse control variables
 private var mouseScrollWingAngle: float = 0.0;
 
@@ -100,6 +104,7 @@ function kinectUpdate() {
             if (screensaverMode == true){
 				birdFlight.aiUpdate();
 			} else {
+				inactivityTick();
 				birdFlight.noInputUpdate();
 			}
             return;
@@ -154,6 +159,8 @@ function kinectUpdate() {
         var normYaw :float = Utils.Map(yawAngle, -70, 70, -1.0, 1.0);
         var normPitch :float = Utils.Map(pitchAngle, 63, 103, 1.0, -1.0);
 
+        inactivityReset();
+
         if (screensaverMode == false) {
 
         	// Is user facing camera? 
@@ -198,7 +205,7 @@ function kinectUpdate() {
 
 function CheckForScreensaverMode() {
 
-	yield WaitForSeconds(2.0);
+	yield WaitForSeconds(3.0);
 
 	var manager = KinectManager.Instance;
 
@@ -233,6 +240,11 @@ function tPoseTick() {
 			print('Valid user recognized. Aborting screensaver.');
 			toggleScreensaverMode(false);
 
+			// When exiting screensaver with new user
+			// is the ONLY time we don't want kinect to 
+			// reboot from scratch.
+			destroyKinectOnScene = false;
+
 		}
 
 	}
@@ -244,6 +256,36 @@ function tPoseReset() {
 //		print("Cancel TPose during screensaver");
 		tPoseCount = 0;
 	}
+
+}
+
+function inactivityTick() {
+
+	if (screensaverMode == false) {
+
+		print('inactivity: ' + inactivityCount + ' / ' +inactivityThreshold);
+		inactivityCount ++;
+
+		if (inactivityCount > inactivityThreshold) {
+
+			print('inactivity threshold reached. Going to screensaver mode. ');
+
+			destroyKinectOnScene = true;
+
+			var currentSceneName = SceneManager.GetActiveScene().name;
+			sceneFader.EndScene(currentSceneName);
+
+			screensaverMode = true;
+
+		}
+
+	}
+
+}
+
+function inactivityReset() {
+
+	inactivityCount = 0;
 
 }
 
@@ -269,4 +311,28 @@ function toggleScreensaverMode(active:boolean){
 
 	screensaverMode = active;
 
+}
+
+function OnDestroy() {
+
+	// We want to destory the kinect
+	// on scene restarts to avoid
+	// memory leaks, however, NOT
+	// when user wakes from screensaver
+	// (Kinect will default to not
+	// destroying itself on scene load
+	// so we must do it manually)
+
+	if (destroyKinectOnScene == true) {
+
+		var manager = KinectManager.Instance;
+		if(manager){
+			print('==> DESTROYING KINECT INSTANCE');
+			Destroy(manager);
+
+		}
+
+	} else {
+		print('==< PERSISTING KINECT INSTANCE');
+	}
 }
