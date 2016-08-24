@@ -59,7 +59,7 @@ function Start () {
     // Show/hide cursor
     if (hideCursor == true) {
     	// Hide the cursor
-		Screen.showCursor = false;
+		Cursor.visible = false;
     }
 
 }
@@ -262,6 +262,7 @@ function toggleScreensaverMode(active:boolean){
 		// EXIT screensaver mode
 		// Simply restart scene now that user is ready.
 		print('EXIT Screensaver mode.');
+
 		var currentSceneName = SceneManager.GetActiveScene().name;
 		sceneFader.EndScene(currentSceneName);
 	}

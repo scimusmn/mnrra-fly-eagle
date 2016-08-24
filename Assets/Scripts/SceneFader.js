@@ -59,12 +59,16 @@ function StartScene() {
 
 
 public function EndScene(SceneName:String) {
-	
+
+  	// TN - Attempt to unload resources
+  	Resources.UnloadUnusedAssets();
+  	print('Unloading Unused Assets...');
+
     // Make sure the RawImage is enabled.
     FadeImg.enabled = true;
     sceneStarting = false;
     StartCoroutine('EndSceneRoutine', SceneName);
-        
+
 }
 
 public function EndSceneRoutine(SceneName: String):IEnumerator {
@@ -80,7 +84,7 @@ public function EndSceneRoutine(SceneName: String):IEnumerator {
 		} else {
 		    yield;
 		}
-				    
+
     } while(true);
 
 }
