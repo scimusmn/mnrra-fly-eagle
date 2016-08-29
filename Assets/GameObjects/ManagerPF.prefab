@@ -12,8 +12,8 @@ GameObject:
   - 114: {fileID: 11492914}
   - 114: {fileID: 11498610}
   - 114: {fileID: 11462334}
-  - 114: {fileID: 11405472}
   - 114: {fileID: 11464444}
+  - 114: {fileID: 11490936}
   m_Layer: 0
   m_Name: ManagerPF
   m_TagString: Untagged
@@ -34,17 +34,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11405472
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817063446a11b484b801f2fa450b427a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11448264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -93,6 +82,18 @@ MonoBehaviour:
   - {fileID: 4900000, guid: c60b6cbc9a8064041b7a24caff7097de, type: 3}
   - {fileID: 4900000, guid: 41aa558b0789e42c09f4c7a016db9f86, type: 3}
   - {fileID: 4900000, guid: cb45cb04441ef45a2ac91e5d18344500, type: 3}
+  fullResetTime: 999999
+--- !u!114 &11490936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f7119f1aadf431b8adf1800ee92c29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11492914
 MonoBehaviour:
   m_ObjectHideFlags: 1

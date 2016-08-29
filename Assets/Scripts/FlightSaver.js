@@ -15,6 +15,7 @@ private var playbackFlapIndex:int = 0;
 private var loadedInputData: List.<Vector3> = new List.<Vector3>();
 private var loadedFlapData: List.<Vector2> = new List.<Vector2>();
 
+var fullResetTime : float = 7200; // 2 hrs in secs
 private var isResetting:boolean = false;
 private var sceneFader:SceneFader;
 
@@ -69,6 +70,7 @@ function getNextInputData():Vector3 {
 			var currentSceneName = SceneManager.GetActiveScene().name;
 			sceneFader.EndScene(currentSceneName);
 			isResetting = true;
+			Invoke('fullResetCheck', 1);
 		}
 
 		return loadedInputData[loadedInputData.Count-1];
@@ -93,6 +95,7 @@ function getNextFlapData():Vector2 {
 			var currentSceneName = SceneManager.GetActiveScene().name;
 			sceneFader.EndScene(currentSceneName);
 			isResetting = true;
+			Invoke('fullResetCheck', 1);
 		}
 
 		return loadedFlapData[loadedFlapData.Count-1];
@@ -163,4 +166,34 @@ function ReadFile() {
 	}
 
 
+}
+
+function fullResetCheck() {
+
+	// If no kinect user present ,
+	// and game has been running for 
+	// longer than 2 hours, quit application.
+	if (Time.realtimeSinceStartup > fullResetTime) {
+
+		var manager = KinectManager.Instance;
+
+		if(manager && manager.IsInitialized()){
+			
+			var userId = manager.GetPrimaryUserID();
+
+			if (!userId || userId <= 0) {
+
+				Destroy(KinectManager.Instance);
+				Invoke('fullQuit', 0.25);
+
+			}
+		}
+
+	}
+
+}
+
+function fullQuit() {
+	print('Goodbye');
+	Application.Quit();
 }
