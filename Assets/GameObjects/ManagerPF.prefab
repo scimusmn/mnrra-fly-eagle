@@ -82,7 +82,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: c60b6cbc9a8064041b7a24caff7097de, type: 3}
   - {fileID: 4900000, guid: 41aa558b0789e42c09f4c7a016db9f86, type: 3}
   - {fileID: 4900000, guid: cb45cb04441ef45a2ac91e5d18344500, type: 3}
-  fullResetTime: 999999
+  fullResetTime: 7200
 --- !u!114 &11490936
 MonoBehaviour:
   m_ObjectHideFlags: 1
