@@ -172,10 +172,13 @@ function kinectUpdate() {
         var vRightWristToShoulder : Vector2 = new Vector2(posWristRight.x, posWristRight.y) - new Vector2(posShoulderRight.x, posShoulderRight.y);
         var wingRightAngle : float = Mathf.Atan2(vRightWristToShoulder.y, vRightWristToShoulder.x) * Mathf.Rad2Deg;
 
+        // Uncomment to test for normal pitch angle
+        // print('Input pitch angle: ' + pitchAngle);
+
         // Normalize degrees to -1 ~ 1 range.
         var normRoll :float = Utils.Map(rollAngle, -60, 60, 1.0, -1.0);
         var normYaw :float = Utils.Map(yawAngle, -70, 70, -1.0, 1.0);
-        var normPitch :float = Utils.Map(pitchAngle, 63, 103, 1.0, -1.0);
+        var normPitch :float = Utils.Map(pitchAngle, 68, 108, 1.0, -1.0);
 
         inactivityReset();
 

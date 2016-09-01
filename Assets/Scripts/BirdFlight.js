@@ -99,16 +99,23 @@ function Update () {
 
 	// Boost adjust when pointed downwards or upwards
 	if (wingSpanPitch < -0.25) {
-		var diveBoost:float = Utils.Map(wingSpanPitch, -0.25, -1.0, 0.002, 0.015);
+		var diveBoost: float = Utils.Map(wingSpanPitch, -0.25, -1.0, 0.002, 0.018);
 		speedBoost += diveBoost;
 	} else if (wingSpanPitch > 0.2) {
-		var pullBoost:float = Utils.Map(wingSpanPitch, 0.2, 1.0, 0.005, 0.015);
+		var pullBoost: float = Utils.Map(wingSpanPitch, 0.2, 1.0, 0.005, 0.015);
 		speedBoost -= pullBoost;
+	}
+
+	// Reduce boost on sharp turns
+	var absSpanAngle : float = Mathf.Abs(wingSpanAngle);
+	if (absSpanAngle > 0.35) {
+		var turnBoost: float = Utils.Map(absSpanAngle, 0.35, 1.0, 0.001, 0.01);
+		speedBoost -= turnBoost;
 	}
 
 	// If flap boosting, apply here.
 	if (speedBoost > 0.0 || dampSpeedBoost > 0.001) {
-
+		
         // Smooth speed increase
 	    dampSpeedBoost = Mathf.Lerp(dampSpeedBoost, speedBoost, 0.1);
 
@@ -121,34 +128,32 @@ function Update () {
         // Update camera to fall back when boosting.
 	    followCam.boostFollowDistance = dampSpeedBoost * 0.75;
 
-        // Reduce the boost speed over time.
-	    speedBoost -= 0.0035;
-	    if (speedBoost < 0.0) {
-	        speedBoost = 0.0;
-	    } else if (speedBoost > 2.5) {
-	        // Ceiling
-	        speedBoost = 2.5;
-	    }
-
-	    // Reduce the boost altitude over time. (decays faster)
-	    altitudeBoost -= 0.02;
-	    if (altitudeBoost < 0.0) {
-	        altitudeBoost = 0.0;
-	    } else if (altitudeBoost > 1.5) {
-	        // Ceiling
-	        altitudeBoost = 1.5;
-	    }
-
 	}
 
+	// Reduce the boost speed over time.
+	// Clamp if necessary
+    speedBoost -= 0.0055;
+    if (speedBoost < 0.0) {
+        speedBoost = 0.0;
+    } else if (speedBoost > 2.25) {
+        // Ceiling
+        speedBoost = 2.25;
+    }
+
+    // Reduce the boost altitude over time. (decays faster)
+    // Clamp if necessary
+    altitudeBoost -= 0.02;
+    if (altitudeBoost < 0.0) {
+        altitudeBoost = 0.0;
+    } else if (altitudeBoost > 1.25) {
+        // Ceiling
+        altitudeBoost = 1.25;
+    }
+
 	// Update wind and water volumes based on altitude
-
-	// Wind volume
-	var altitudeVol:float = Utils.Map(transform.position.y, 0, 700, 0.0, 1);
+	var altitudeVol: float = Utils.Map(transform.position.y, 0, 700, 0.0, 1); // Wind volume
 	soundManager.setLoopVolume(1, altitudeVol);
-
-	// River volume
-	var waterVol: float = Utils.Map(transform.position.y, 0, 100, 1.0, 0.0);
+	var waterVol: float = Utils.Map(transform.position.y, 0, 100, 1.0, 0.0); // River volume
 	soundManager.setLoopVolume(2, waterVol);
 
 }
@@ -164,11 +169,10 @@ public function Flap() {
 	// Make first flap most powerful
 	if (speedBoost == 0.0) {
 		speedBoost += 0.5f;
-		altitudeBoost += 0.025f;
+		altitudeBoost += 0.1f;
 	} else {
 		speedBoost += 0.25f;
-		altitudeBoost += 0.025f;
-		altitudeBoost *= 1.1f; // Altitude momentum
+		altitudeBoost += 0.08f;
 	}
 
 	// Play flap sound effect
