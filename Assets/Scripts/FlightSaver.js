@@ -40,11 +40,14 @@ function Update () {
     	WriteFile();
     }
 
-    // TEMP- fast forward to end of screensaver flight
+    // TEMP - fast forward to end of screensaver flight
     if (Input.GetKey(KeyCode.F)){ 
     	
     	playbackInputIndex = loadedInputData.Count - 5;
     	playbackFlapIndex = loadedFlapData.Count - 5;
+    	fullResetTime = 1;
+
+
     }
 
 }
