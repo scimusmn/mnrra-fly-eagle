@@ -132,7 +132,7 @@ function Update () {
 
 	// Reduce the boost speed over time.
 	// Clamp if necessary
-    speedBoost -= 0.0055;
+    speedBoost -= 0.0045;
     if (speedBoost < 0.0) {
         speedBoost = 0.0;
     } else if (speedBoost > 2.25) {

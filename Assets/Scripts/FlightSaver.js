@@ -31,12 +31,20 @@ function Start() {
 
 }
 
+
 function Update () {
 
 	// Press 'P' to write recorded flight data to file.
 	// Why P? Because S was taken.
 	if (recordFlight == true && Input.GetKeyDown(KeyCode.P)){ 
     	WriteFile();
+    }
+
+    // TEMP- fast forward to end of screensaver flight
+    if (Input.GetKey(KeyCode.F)){ 
+    	
+    	playbackInputIndex = loadedInputData.Count - 5;
+    	playbackFlapIndex = loadedFlapData.Count - 5;
     }
 
 }
