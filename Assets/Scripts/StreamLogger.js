@@ -15,7 +15,13 @@ function Awake() {
 
 	logFileName = 'LOG-'+ nowDate + '-' + nowTime + '.txt';
 
-	writeStream = File.CreateText(logPath + logFileName); // Returns Stream Writer
+	var writePath:String = '';
+	if( Application.isEditor ){
+	 writePath = logPath + logFileName;
+	} else {
+		writePath = Application.dataPath + '/'+ logFileName;
+	}
+	writeStream = File.CreateText(writePath); // Returns Stream Writer
 
 }
  
