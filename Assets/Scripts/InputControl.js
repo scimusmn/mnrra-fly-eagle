@@ -41,6 +41,7 @@ private var tPoseThreshold:int = 30; // frames t-pose must be held to abort scre
 private var inactivityCount:int = 0;
 private var inactivityThreshold:int = 1500; // (60fps * 25secs) frames before active scene is aborted for screensaver
 private var destroyKinectOnScene:boolean = true;
+private var streamLogger:StreamLogger;
 
 // Mouse control variables
 private var mouseScrollWingAngle: float = 0.0;
@@ -61,9 +62,8 @@ function Start () {
     // Once scene starts, check if user is active.
     // If not, assume there is no one using, 
     // begin "screensaver" AI flight.
-    var nowTime:String = System.DateTime.Now.ToString("hh:mm:ss"); 
-    var nowDate:String = System.DateTime.Now.ToString("MM/dd/yyyy");
-    Debug.Log('----] InputControls Start() ' + nowDate + ' | ' + nowTime + ' [-----');
+    streamLogger = GameObject.Find('ManagerPF').GetComponent('StreamLogger');
+    streamLogger.Log('InputControls:Start()');
     Invoke('CheckForScreensaverMode', 4);
     Invoke('CheckForScreensaverMode', 6);
     Invoke('CheckForScreensaverMode', 8);
@@ -243,21 +243,29 @@ function CheckForHardwareAccess() {
 
 function CheckForScreensaverMode() {
 
-	if (hasSeenUser == true) {
-		return;
-	}
+	var manager = KinectManager.Instance;
 
 	// TEMP - logging to debug occasional kinect issues.
-	var manager = KinectManager.Instance;
 	if (!manager) {
-		Debug.Log('CheckForScreensaverMode t['+Mathf.Round(Time.timeSinceLevelLoad)+']. manager: null.');
+		streamLogger.Log('Kinect check ['+Mathf.Round(Time.timeSinceLevelLoad)+']. manager: null.');
 	} else {
-		Debug.Log('CheckForScreensaverMode t['+Mathf.Round(Time.timeSinceLevelLoad)+']. manager: true, IsInitialized:' + manager.IsInitialized() + ', GetUsersClrTex:' + manager.GetUsersClrTex());
-		if (!manager.GetRawDepthMap()) {
-			Debug.Log('GetRawDepthMap: false ');
+		streamLogger.Log('Kinect check ['+Mathf.Round(Time.timeSinceLevelLoad)+']. manager: true, IsInitialized:' + manager.IsInitialized() + ', hasSeenUser:'+hasSeenUser );
+		if (!manager.GetUsersClrTex()) {
+			streamLogger.Log('GetUsersClrTex: false ');
 		} else {
-			Debug.Log('GetRawDepthMap: true ');
+			streamLogger.Log('GetUsersClrTex: true ');
 		}
+		if (!manager.GetRawDepthMap()) {
+			streamLogger.Log('GetRawDepthMap: false ');
+		} else {
+			streamLogger.Log('GetRawDepthMap: true ');
+		}
+	}
+
+	// Exit if user has already been spotted.
+	if (hasSeenUser == true) {
+		streamLogger.Log('-> Already seen user. Exit.');
+		return;
 	}
 
 	if(manager && manager.IsInitialized()){
