@@ -1,6 +1,7 @@
 ﻿#pragma strict
 
 import UnityEngine.SceneManagement;
+import System;
 
 public var targetObj : GameObject;
 private var birdFlight : BirdFlight;
@@ -60,6 +61,9 @@ function Start () {
     // Once scene starts, check if user is active.
     // If not, assume there is no one using, 
     // begin "screensaver" AI flight.
+    var nowTime:String = System.DateTime.Now.ToString("hh:mm:ss"); 
+    var nowDate:String = System.DateTime.Now.ToString("MM/dd/yyyy");
+    Debug.Log('----] InputControls Start() ' + nowDate + ' | ' + nowTime + ' [-----');
     Invoke('CheckForScreensaverMode', 4);
     Invoke('CheckForScreensaverMode', 6);
     Invoke('CheckForScreensaverMode', 8);
@@ -226,10 +230,11 @@ function kinectUpdate() {
 
 function CheckForHardwareAccess() {
 	var manager = KinectManager.Instance;
+
 	if(manager && manager.IsInitialized()){
 
 	} else {
-		print('ERROR - kinect hardware still not available after 10 secs');
+		Debug.LogError('ERROR - kinect hardware still not available after 10 secs');
 		var currentSceneName = SceneManager.GetActiveScene().name;
 		sceneFader.EndScene(currentSceneName);
 	}
@@ -242,9 +247,18 @@ function CheckForScreensaverMode() {
 		return;
 	}
 
-	print('CheckForScreensaverMode');
-
+	// TEMP - logging to debug occasional kinect issues.
 	var manager = KinectManager.Instance;
+	if (!manager) {
+		Debug.Log('CheckForScreensaverMode t['+Mathf.Round(Time.timeSinceLevelLoad)+']. manager: null.');
+	} else {
+		Debug.Log('CheckForScreensaverMode t['+Mathf.Round(Time.timeSinceLevelLoad)+']. manager: true, IsInitialized:' + manager.IsInitialized() + ', GetUsersClrTex:' + manager.GetUsersClrTex());
+		if (!manager.GetRawDepthMap()) {
+			Debug.Log('GetRawDepthMap: false ');
+		} else {
+			Debug.Log('GetRawDepthMap: true ');
+		}
+	}
 
 	if(manager && manager.IsInitialized()){
         var userId = manager.GetPrimaryUserID();
