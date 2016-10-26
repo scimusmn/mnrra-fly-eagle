@@ -1,0 +1,12 @@
+[09:15:53]:InputControls:Start()
+[09:15:57]:Kinect check [4]. manager: true, IsInitialized:True, hasSeenUser:False
+[09:15:57]:GetUsersClrTex: false 
+[09:15:57]:GetRawDepthMap: true 
+[09:15:59]:Kinect check [6]. manager: true, IsInitialized:True, hasSeenUser:True
+[09:15:59]:GetUsersClrTex: false 
+[09:15:59]:GetRawDepthMap: true 
+[09:15:59]:-> Already seen user. Exit.
+[09:16:01]:Kinect check [8]. manager: true, IsInitialized:True, hasSeenUser:True
+[09:16:01]:GetUsersClrTex: false 
+[09:16:01]:GetRawDepthMap: true 
+[09:16:01]:-> Already seen user. Exit.
